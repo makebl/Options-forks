@@ -180,7 +180,7 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-nfs luci-app-n
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-opkg luci-app-opkg
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi luci-app-guest-wifi
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-tencentddns luci-app-tencentddns
-svn co https://github.com/tcsr200722/luci-app-cpufreq luci-app-cpufreq
+svn co https://github.com/openwrt-xiaomi/luci-app-cpufreq luci-app-cpufreq
 
 
 ## 禁止联网，访问控制
