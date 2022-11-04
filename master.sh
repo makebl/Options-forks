@@ -48,7 +48,7 @@ svn co https://github.com/kenzok8/jell/trunk/UnblockNeteaseMusic-Go UnblockNetea
 svn co https://github.com/kenzok8/small-package/trunk/aliyundrive-fuse aliyundrive-fuse
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse luci-app-aliyundrive-fuse
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-dnsfilter luci-app-dnsfilter
-svn co https://github.com/kenzok8/jell/trunk/luci-app-cpufreq luci-app-cpufreq
+# svn co https://github.com/kenzok8/jell/trunk/luci-app-cpufreq luci-app-cpufreq
 svn co https://github.com/kenzok8/jell/trunk/aliyundrive-webdav aliyundrive-webdav
 svn co https://github.com/kenzok8/litte/trunk/luci-app-koolddns luci-app-koolddns
 svn co https://github.com/kenzok8/jell/trunk/luci-app-adbyby-plus luci-app-adbyby-plus
@@ -180,6 +180,9 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-nfs luci-app-n
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-opkg luci-app-opkg
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi luci-app-guest-wifi
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-tencentddns luci-app-tencentddns
+svn co https://github.com/tcsr200722/luci-app-cpufreq/trunk luci-app-cpufreq
+
+
 ## 禁止联网，访问控制
 svn co https://github.com/k-szuster/luci-access-control/trunk/luci-app-access-control luci-app-access-control
 
