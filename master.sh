@@ -49,6 +49,7 @@ svn co https://github.com/kenzok8/small-package/trunk/aliyundrive-fuse aliyundri
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse luci-app-aliyundrive-fuse
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-dnsfilter luci-app-dnsfilter
 # svn co https://github.com/kenzok8/jell/trunk/luci-app-cpufreq luci-app-cpufreq
+svn co https://github.com/gw826943555/openwrt-cpufreq/trunk/luci-app-cpufreq luci-app-cpufreq
 svn co https://github.com/kenzok8/jell/trunk/aliyundrive-webdav aliyundrive-webdav
 svn co https://github.com/kenzok8/litte/trunk/luci-app-koolddns luci-app-koolddns
 svn co https://github.com/kenzok8/jell/trunk/luci-app-adbyby-plus luci-app-adbyby-plus
@@ -69,9 +70,7 @@ svn co https://github.com/kenzok8/small-package/trunk/luci-app-onliner luci-app-
 # svn co https://github.com/kenzok78/small-package/trunk/luci-app-argon-config luci-app-argon-config
 # svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-easymesh luci-app-easymesh
 
-## store应用商店 插件
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-store luci-app-store
-svn co https://github.com/linkease/istore-ui/trunk/app-store-ui app-store-ui
+
 
 ## 依赖
 svn co https://github.com/kiddin9/openwrt-packages/trunk/ffmpeg-remux ffmpeg-remux
@@ -127,7 +126,11 @@ svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-linkeas
 svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-quickstart luci-app-quickstart   #iStoreOS-web
 svn co https://github.com/linkease/nas-packages/trunk/network/services/ddnsto ddnsto
 svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease linkease
+
 svn co https://github.com/linkease/nas-packages/trunk/network/services/quickstart quickstart
+mkdir -p luci-app-luci-app-quickstart/luasrc/view/quickstart/main.htm           ##增加固件更新
+
+curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/main.htm > luci-app-quickstart/luasrc/view/quickstart/main.htm
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-wxedge luci-app-wxedge     #网心云
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-jellyfin luci-app-jellyfin  #jellyfin
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-heimdall luci-app-heimdall
@@ -141,6 +144,11 @@ svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/xunyou
 svn co https://github.com/linkease/istore-packages/trunk/luci-app-kodexplorer luci-app-kodexplorer  #KOD可道云私人网盘
 svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-istorex luci-app-istorex
 svn co https://github.com/linkease/openwrt-app-meta/trunk/applications/app-meta-aliyundrive-fuse app-meta-aliyundrive-fuse
+
+## store应用商店 插件
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-store luci-app-store
+svn co https://github.com/linkease/istore-ui/trunk/app-store-ui app-store-ui
+
 
 ## 零碎拉取的插件
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-turboacc luci-app-turboacc
@@ -180,9 +188,6 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-nfs luci-app-n
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-opkg luci-app-opkg
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi luci-app-guest-wifi
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-tencentddns luci-app-tencentddns
-svn co https://github.com/gw826943555/openwrt-cpufreq/trunk/luci-app-cpufreq luci-app-cpufreq
-
-
 ## 禁止联网，访问控制
 svn co https://github.com/k-szuster/luci-access-control/trunk/luci-app-access-control luci-app-access-control
 
