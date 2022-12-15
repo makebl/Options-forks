@@ -222,7 +222,7 @@ svn co https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
 svn co https://github.com/vernesong/OpenClash/trunk luci-app-openclash
 rm -rf luci-app-openclash/img
 svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
-mkdir -p luci-app-luci-app-passwall/root/usr/share/passwall/rules/direct_host
+mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
 curl -fsSL  https://raw.githubusercontent.com/makebl/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
 svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus luci-app-ssr-plus
