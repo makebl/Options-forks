@@ -131,8 +131,8 @@ svn co https://github.com/linkease/nas-packages/trunk/network/services/quickstar
 mkdir -p luci-app-luci-app-quickstart/luasrc/view/quickstart/main.htm           ##增加固件更新
 curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/main.htm > luci-app-quickstart/luasrc/view/quickstart/main.htm
 
-mkdir -p luci-app-luci-app-passwall/usr/share/passwall/rules/direct_host
-curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/main.htm > luci-app-passwall/usr/share/passwall/rules/direct_host
+mkdir -p luci-app-luci-app-passwall/root/usr/share/passwall/rules/direct_host
+curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
 
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-wxedge luci-app-wxedge     #网心云
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-jellyfin luci-app-jellyfin  #jellyfin
