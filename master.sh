@@ -145,7 +145,7 @@ svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-a
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/xunyou xunyou
 svn co https://github.com/linkease/istore-packages/trunk/luci-app-kodexplorer luci-app-kodexplorer  #KOD可道云私人网盘
 svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-istorex luci-app-istorex
-svn co https://github.com/linkease/openwrt-app-meta/trunk/applications/app-meta-aliyundrive-fuse app-meta-aliyundrive-fuse
+
 
 ## store应用商店 插件
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-store luci-app-store
