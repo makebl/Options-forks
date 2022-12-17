@@ -192,7 +192,7 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi luc
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-tencentddns luci-app-tencentddns
 ## 禁止联网，访问控制
 svn co https://github.com/k-szuster/luci-access-control/trunk/luci-app-access-control luci-app-access-control
-
+git clone -b makebl https://github.com/makebl/luci-app-autoupdate luci-app-autoupdate
 # luci-theme主题插件
 
 #魔改小清新主题
