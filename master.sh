@@ -14,7 +14,11 @@ svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server 
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-syncthing luci-app-syncthing     #syncthing同步工具
 svn co https://github.com/Lienol/openwrt-packages/trunk/utils/syncthing syncthing
 
+## passwall依赖
+
+
 ## sirpdboy 插件
+svn co https://github.com/sirpdboy/luci-app-partexp/trunk luci-app-partexp
 svn co https://github.com/sirpdboy/luci-app-lucky/trunk/luci-app-lucky luci-app-lucky    #替代socat,主要用于公网IPv6 tcp/udp转 内网ipv4
 svn co https://github.com/sirpdboy/luci-app-ddns-go/trunk/luci-app-ddns-go luci-app-ddns-go
 svn co https://github.com/sirpdboy/luci-app-ddns-go/trunk/ddnsgo ddnsgo
@@ -28,7 +32,6 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-rebootschedul
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-onliner luci-app-onliner
 svn co https://github.com/sirpdboy/luci-app-advanced/trunk luci-app-advanced
 svn co https://github.com/sirpdboy/luci-app-netdata/trunk luci-app-netdata
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata netdata
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome luci-app-adguardhome
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/adguardhome adguardhome
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-eqos luci-app-eqos
@@ -55,13 +58,14 @@ svn co https://github.com/kenzok8/litte/trunk/luci-app-koolddns luci-app-koolddn
 svn co https://github.com/kenzok8/jell/trunk/luci-app-adbyby-plus luci-app-adbyby-plus
 svn co https://github.com/sbwml/luci-app-alist/trunk/alist alist
 svn co https://github.com/sbwml/luci-app-alist/trunk/luci-app-alist luci-app-alist
-svn co https://github.com/kenzok8/small-package/trunk/hysteria hysteria
 svn co https://github.com/kenzok8/small-package/trunk/haproxy haproxy
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-amule luci-app-amule
 svn co https://github.com/kenzok8/small-package/trunk/lua-ipops lua-ipops
 svn co https://github.com/kenzok8/small-package/trunk/libcron libcron
 svn co https://github.com/kenzok8/small-package/trunk/dns2socks dns2socks
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-onliner luci-app-onliner
+svn co https://github.com/kenzok8/small/trunk/dns2tcp dns2tcp
+
 
 # svn co https://github.com/kenzok8/jell/trunk/go-aliyundrive-webdav/trunk go-aliyundrive-webdav
 # svn co https://github.com/kenzok8/jell/trunk/aria2 aria2
@@ -88,6 +92,7 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/rtl8821cu rtl8821cu
 svn co https://github.com/kiddin9/openwrt-packages/trunk/rtl88x2bu rtl88x2bu
 
 ## 天灵 插件
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-naiveproxy luci-app-naiveproxy
 svn co https://github.com/project-openwrt/openwrt-tmate/trunk openwrt-tmate
 svn co https://github.com/tindy2013/openwrt-subconverter/trunk openwrt-subconverter
 svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-aliddns luci-app-aliddns
@@ -129,10 +134,8 @@ svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease 
 
 svn co https://github.com/linkease/nas-packages/trunk/network/services/quickstart quickstart
 mkdir -p luci-app-luci-app-quickstart/luasrc/view/quickstart/main.htm           ##增加固件更新
+
 curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/main.htm > luci-app-quickstart/luasrc/view/quickstart/main.htm
-
-
-
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-wxedge luci-app-wxedge     #网心云
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-jellyfin luci-app-jellyfin  #jellyfin
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-heimdall luci-app-heimdall
@@ -167,7 +170,7 @@ svn co https://github.com/zzsj0928/luci-app-pushbot/trunk luci-app-pushbot
 svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav luci-app-aliyundrive-webdav
 # svn co https://github.com/sbwml/luci-app-alist/trunk luci-app-alist
 svn co https://github.com/esirplayground/luci-app-poweroff/trunk luci-app-poweroff
-svn co https://github.com/izilzty/luci-app-chinadns-ng/trunk luci-app-chinadns-ng
+# svn co https://github.com/izilzty/luci-app-chinadns-ng/trunk luci-app-chinadns-ng
 svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman luci-app-dockerman  #docker图形界面
 svn co https://github.com/lisaac/luci-lib-docker/trunk/collections/luci-lib-docker luci-lib-docker        
 svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman luci-app-diskman     #磁盘管理
@@ -190,12 +193,14 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-nfs luci-app-n
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-opkg luci-app-opkg
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi luci-app-guest-wifi
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-tencentddns luci-app-tencentddns
+svn co https://github.com/makebl/packages/trunk/luci-app-udpxy luci-app-udpxy    #组播
 ## 禁止联网，访问控制
 svn co https://github.com/k-szuster/luci-access-control/trunk/luci-app-access-control luci-app-access-control
-git clone -b makebl https://github.com/makebl/luci-app-autoupdate luci-app-autoupdate
+
 # luci-theme主题插件
 
 #魔改小清新主题
+svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-neobird luci-theme-neobird
 svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-neobird2 luci-theme-neobird2
 svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-argon luci-theme-argon
 svn co https://github.com/shidahuilang/luci-theme/trunk/luci-app-argon-config luci-app-argon-config
@@ -223,7 +228,8 @@ svn co https://github.com/vernesong/OpenClash/trunk luci-app-openclash
 rm -rf luci-app-openclash/img
 svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
 mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
-curl -fsSL  https://raw.githubusercontent.com/makebl/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
+curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
+
 svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus luci-app-ssr-plus
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-bypass luci-app-bypass
