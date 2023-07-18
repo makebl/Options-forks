@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [master,openwrt-21.02,openwrt-18.06]
+        target: [Lede,openwrt-21.02,openwrt-18.06]
        
                 #[master,main,openwrt-21.02,openwrt-18.06,19.07,21.02]
         
