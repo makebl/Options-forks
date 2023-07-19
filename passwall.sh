@@ -2,7 +2,7 @@
 
 git clone https://github.com/xiaorouji/openwrt-passwall.git
 
-svn co https://github.com/xiaorouji/trunk/openwrt-passwall passwall/relevance
+svn co https://github.com/xiaorouji/trunk/openwrt-passwall passwall
 
   
 fi
