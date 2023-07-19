@@ -1,20 +1,40 @@
 #!/bin/bash
 
 
-#svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
-#mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
-#curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
+svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
+mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
+curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
 
-#svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
+svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
 
 
-#git clone https://github.com/xiaorouji/openwrt-passwall/trunk relevance
-#git clone https://github.com/xiaorouji/trunk/openwrt-passwall relevance
- 
-#git clone -b packages https://github.com/xiaorouji/openwrt-passwall relevance
 svn co https://github.com/xiaorouji/openwrt-passwall/trunk relevance
 
-
+# 生成完整目录清单
+cat > Update.txt <<EOF
+brook
+chinadns-ng
+dns2socks
+hysteria
+ipt2socks
+luci-app-passwall2
+microsocks
+naiveproxy
+pdnsd-alt
+shadowsocks-rust
+shadowsocksr-libev
+simple-obfs
+ssocks
+tcping
+trojan
+trojan-go
+trojan-plus
+v2ray-core
+v2ray-geodata
+v2ray-plugin
+xray-core
+xray-plugin
+EOF
 
 
 
