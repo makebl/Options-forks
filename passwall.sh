@@ -10,7 +10,8 @@ svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 l
 
 git clone https://github.com/xiaorouji/openwrt-passwall/trunk relevance
 git clone https://github.com/xiaorouji/trunk/openwrt-passwall relevance
-#git clone -b packages https://github.com/xiaorouji/openwrt-passwall.git relevance
+ 
+git clone -b packages https://github.com/xiaorouji/openwrt-passwall.git relevance
 
 
 
