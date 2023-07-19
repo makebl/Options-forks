@@ -1,15 +1,12 @@
 #!/bin/bash
 
-git clone https://github.com/xiaorouji/openwrt-passwall.git
-cd openwrt-passwall
-git checkout -b luci
-cd luci/luci-app-passwall
-git init
-git add .
-git commit -m "Initial commit"
-git remote add makebl https://github.com/makebl/openwrt-package.git
-git remote add makebl https://github.com/makebl/openwrt-package.git
-git push makebl passwall:passwall
+git clone https://github.com/makebl/openwrt-package.git passwall1
+if [[ $(ls passwall1 | grep -c "luci-app-passwall") -eq '0' ]]; then
+  svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall passwall1/luci-app-passwall
+  svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 passwall1/luci-app-passwall2
+fi
+mv -f passwall1/* ./
+rm -rf passwall1
 
 
 
