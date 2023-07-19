@@ -1,18 +1,18 @@
 #!/bin/bash
 
 
-svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
-mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
-curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
+#svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
+#mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
+#curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
 
-svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
+#svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
 
 
 git clone https://github.com/xiaorouji/openwrt-passwall/trunk relevance
 git clone https://github.com/xiaorouji/trunk/openwrt-passwall relevance
  
-git clone -b packages https://github.com/xiaorouji/openwrt-passwall.git relevance
-
+git clone -b packages https://github.com/xiaorouji/openwrt-passwall relevance
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk relevance
 
 
 
