@@ -9,7 +9,7 @@ git add .
 git commit -m "Initial commit"
 git remote add makebl https://github.com/makebl/openwrt-package.git
 git remote add makebl https://github.com/makebl/openwrt-package.git
-git push makebl passwall-luci-app:passwall
+git push makebl passwall:passwall
 
 
 
