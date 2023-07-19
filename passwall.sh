@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git clone https://github.com/makebl/openwrt-package.git passwall
-cd openwrt-package
+cd openwrt-package/passwall
 git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git
 cd openwrt-passwall
 cp -r luci-app-passwall ../package/feeds/passwall/
