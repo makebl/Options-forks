@@ -2,7 +2,7 @@
 
 git clone https://github.com/xiaorouji/openwrt-passwall.git
 cd openwrt-passwall
-git checkout -b passwall-luci-app
+git checkout -b luci
 cd luci/luci-app-passwall
 git init
 git add .
