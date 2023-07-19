@@ -1,12 +1,23 @@
 #!/bin/bash
 
-git clone https://github.com/makebl/openwrt-package.git passwall1
-if [[ $(ls passwall1 | grep -c "luci-app-passwall") -eq '0' ]]; then
-  svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall passwall1/luci-app-passwall
-  svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 passwall1/luci-app-passwall2
+git clone https://github.com/makebl/openwrt-package.git
+cd openwrt-package
+git checkout passwall
+
+cd ..
+git clone https://github.com/xiaorouji/openwrt-passwall.git passwall1
+cd passwall1
+
+if [[ $(ls | grep -c "luci-app-passwall") -eq '0' ]]; then
+  svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
+  svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
 fi
-mv -f passwall1/* ./
+
+mv -f * ../openwrt-package/package/feeds/passwall/
+
+cd ..
 rm -rf passwall1
+
 
 
 
