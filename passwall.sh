@@ -1,7 +1,9 @@
 #!/bin/bash
 
-git clone https://github.com/xiaorouji/openwrt-passwall.git passwall1
-
+#git clone https://github.com/xiaorouji/openwrt-passwall.git passwall1
+git clone -b luci https://github.com/xiaorouji/openwrt-passwall/luci-app-passwall luci-app-passwall
+git clone https://github.com/xiaorouji/openwrt-passwall2/luci-app-passwall2 luci-app-passwall2
+ 
 
 
 
