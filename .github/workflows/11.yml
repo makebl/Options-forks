@@ -3,7 +3,7 @@ name: Auto Pull Passwall
 on:
   push:
     branches:
-      - main # 当主分支有推送时触发，也可以根据自己的需求修改
+      - main
 
 jobs:
   auto_pull:
@@ -14,13 +14,13 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: makebl/openwrt-package
-        ref: passwall # 选择 passwall 分支
+        ref: passwall
 
     - name: Clone openwrt-passwall repository
       run: git clone https://github.com/xiaorouji/openwrt-passwall.git
 
     - name: Move passwall files to openwrt-package/feeds/passwall directory
-      run: mv openwrt-passwall/luci-app-passwall openwrt-package/feeds/passwall/luci-app-passwall
+      run: mv openwrt-passwall/* openwrt-package/feeds/passwall/
 
     - name: Commit and push changes
       run: |
