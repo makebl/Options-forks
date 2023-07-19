@@ -1,13 +1,13 @@
 #!/bin/bash
 
-git clone https://github.com/xiaorouji/openwrt-passwall.git passwall1
-if [[ `ls passwall1 | grep -c "luci-app-passwall"` -eq '0' ]]; then
-  svn co https://github.com/xiaorouji/trunk/openwrt-passwall passwall1/relevance
-  git clone -b
+git clone https://github.com/xiaorouji/openwrt-passwall.git
+
+svn co https://github.com/xiaorouji/trunk/openwrt-passwall passwall1/relevance
+
   
 fi
-mv -f passwall1/* ./
-rm -rf passwall1
+mv -f passwall/* ./
+rm -rf passwall
 
 
 # 生成完整目录清单
