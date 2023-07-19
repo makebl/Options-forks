@@ -5,7 +5,7 @@ cd openwrt-package
 git checkout passwall
 
 cd ..
-git clone https://github.com/xiaorouji/openwrt-passwall.git passwall1
+svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall passwall1
 cd passwall1
 
 if [[ $(ls | grep -c "luci-app-passwall") -eq '0' ]]; then
