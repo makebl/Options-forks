@@ -11,7 +11,30 @@ rm -rf passwall1
 
 # 生成完整目录清单
 cat > Update.txt <<EOF
-
+UpdateList.txt
+brook
+chinadns-ng
+dns2socks
+hysteria
+ipt2socks
+luci-app-passwall
+luci-app-passwall2
+microsocks
+naiveproxy
+pdnsd-alt
+shadowsocks-rust
+shadowsocksr-libev
+simple-obfs
+ssocks
+tcping
+trojan
+trojan-go
+trojan-plus
+v2ray-core
+v2ray-geodata
+v2ray-plugin
+xray-core
+xray-plugin
 EOF
 
 #TG通知
@@ -19,5 +42,3 @@ if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKE
 
 # 判断变量值，如果有效发送微信通知
 if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
-
-exit 0
