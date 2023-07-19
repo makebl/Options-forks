@@ -8,7 +8,7 @@ curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/a
 svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
 
 
-svn co https://github.com/xiaorouji/openwrt-passwall/trunk relevance
+git clone https://github.com/xiaorouji/openwrt-passwall/trunk relevance
 
 # 生成完整目录清单
 cat > Update.txt <<EOF
