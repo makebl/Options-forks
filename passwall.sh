@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #git clone https://github.com/xiaorouji/openwrt-passwall.git passwall1
-svn co https://github.com/xiaorouji//branches/luci/openwrt-passwall passwall
-git clone https://github.com/xiaorouji/trunk/openwrt-passwall2 passwall2
+git clone https://github.com/xiaorouji//branches/luci/openwrt-passwall passwall
+git clone https://github.com/xiaorouji/openwrt-passwall2/trunk passwall2
  
 
 
