@@ -1,4 +1,4 @@
-name: ssrplus
+name: helloworld
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [ssrplus]
+        target: [helloworld]
        
                 #[master,main,openwrt-21.02,openwrt-18.06,19.07,21.02]
         
