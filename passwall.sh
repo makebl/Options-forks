@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/xiaorouji/openwrt-passwall.git passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git passwall1
 if [[ `ls passwall1 | grep -c "luci-app-passwall"` -eq '0' ]]; then
   svn co https://github.com/xiaorouji/trunk/openwrt-passwall passwall/relevance
   
