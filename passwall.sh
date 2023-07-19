@@ -6,6 +6,8 @@ mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
 curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
 
 svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
+
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/packages relevance
  
 
 
