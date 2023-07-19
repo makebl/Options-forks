@@ -2,7 +2,7 @@
 
 svn co https://github.com/fw876/helloworld/trunk relevance
 #mv -f helloworld/* ./
-rm -rf luci-app-ssr-plus
+rm -rf relevance/luci-app-ssr-plus
 svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus luci-app-ssr-plus
 
 # 生成完整目录清单
