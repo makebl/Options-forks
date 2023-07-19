@@ -1,11 +1,16 @@
 #!/bin/bash
 
-git clone https://github.com/makebl/openwrt-package.git
-cd openwrt-package
-git remote add xiaorouji https://github.com/xiaorouji/openwrt-passwall.git
-git pull xiaorouji passwall
-git merge xiaorouji/passwall
-git push origin passwall
+git clone https://github.com/xiaorouji/openwrt-passwall.git
+cd openwrt-passwall
+git checkout -b passwall-luci-app
+cd luci/luci-app-passwall
+git init
+git add .
+git commit -m "Initial commit"
+git remote add makebl https://github.com/makebl/openwrt-package.git
+git remote add makebl https://github.com/makebl/openwrt-package.git
+git push makebl passwall-luci-app:passwall
+
 
 
 
