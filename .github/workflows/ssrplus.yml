@@ -1,4 +1,4 @@
-name: 11
+name: ssrplus
 
 on:
   workflow_dispatch:
