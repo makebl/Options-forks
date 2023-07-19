@@ -2,12 +2,12 @@
 
 git clone https://github.com/makebl/openwrt-package.git
 cd openwrt-package
-git checkout passwall
-git clone --depth=1 --branch=luci https://github.com/xiaorouji/openwrt-passwall.git
-mv openwrt-passwall/luci-app-passwall package/feeds/passwall/
-git add -A
-git commit -m "Add luci-app-passwall from openwrt-passwall"
+git submodule add -b luci --depth=1 https://github.com/xiaorouji/openwrt-passwall.git package/feeds/passwall/luci-app-passwall
+git checkout -b passwall
+git add .
+git commit -m "Add luci-app-passwall from xiaorouji repository"
 git push origin passwall
+
 
 
 #TG通知
