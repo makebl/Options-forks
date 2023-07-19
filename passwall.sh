@@ -2,8 +2,8 @@
 
 git clone https://github.com/xiaorouji/openwrt-passwall.git passwall
 if [[ `ls passwall1 | grep -c "luci-app-passwall"` -eq '0' ]]; then
-  svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall passwall1/luci-app-passwall
-  svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 passwall1/luci-app-passwall2
+  svn co https://github.com/xiaorouji/trunk/openwrt-passwall passwall/relevance
+  
 fi
 mv -f passwall1/* ./
 rm -rf passwall1
