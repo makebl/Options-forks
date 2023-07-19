@@ -7,7 +7,7 @@ curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/a
 
 svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
 
-git clone https://github.com/xiaorouji/openwrt-passwall/branches/packages relevance
+git clone https://github.com/xiaorouji/openwrt-passwall relevance
  
 
 
