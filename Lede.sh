@@ -232,7 +232,7 @@ svn co https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
 svn co https://github.com/281677160/openwrt-package/trunk/luci-app-clash luci-app-clash
 #svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
 #svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus luci-app-ssr-plus
-#svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-bypass luci-app-bypass
+svn co https://github.com/kenzok8/small/trunk/luci-app-bypass luci-app-bypass
 svn co https://github.com/shidahuilang/OpenClash/trunk luci-app-xiaolaoshu
 rm -rf luci-app-xiaolaoshu/img
 svn co https://github.com/zxlhhyccc/luci-app-v2raya/branches/18.06 luci-app-v2raya
