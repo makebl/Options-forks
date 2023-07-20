@@ -14,8 +14,8 @@ svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server 
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-syncthing luci-app-syncthing     #syncthing同步工具
 svn co https://github.com/Lienol/openwrt-packages/trunk/utils/syncthing syncthing
 
-## 依赖
-svn co https://github.com/281677160/openwrt-package/trunk/Lede/relevance relevance
+## 依赖文件
+svn co https://github.com/281677160/openwrt-package/trunk/relevance relevance
 
 ## sirpdboy 插件
 svn co https://github.com/sirpdboy/luci-app-partexp/trunk luci-app-partexp
@@ -53,7 +53,7 @@ svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-dnsfilter luci-app-dnsfilter
 # svn co https://github.com/kenzok8/jell/trunk/luci-app-cpufreq luci-app-cpufreq
 svn co https://github.com/gw826943555/openwrt-cpufreq/trunk/luci-app-cpufreq luci-app-cpufreq
-svn co https://github.com/kenzok8/jell/trunk/aliyundrive-webdav aliyundrive-webdav
+# svn co https://github.com/kenzok8/jell/trunk/aliyundrive-webdav aliyundrive-webdav
 svn co https://github.com/kenzok8/litte/trunk/luci-app-koolddns luci-app-koolddns
 svn co https://github.com/kenzok8/jell/trunk/luci-app-adbyby-plus luci-app-adbyby-plus
 svn co https://github.com/sbwml/luci-app-alist/trunk/alist alist
@@ -65,7 +65,7 @@ svn co https://github.com/kenzok8/small-package/trunk/libcron libcron
 svn co https://github.com/kenzok8/small-package/trunk/dns2socks dns2socks
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-onliner luci-app-onliner
 svn co https://github.com/kenzok8/small/trunk/dns2tcp dns2tcp
-
+svn co https://github.com/kenzok8/small-package/trunk/sing-box sing-box
 
 # svn co https://github.com/kenzok8/jell/trunk/go-aliyundrive-webdav/trunk go-aliyundrive-webdav
 # svn co https://github.com/kenzok8/jell/trunk/aria2 aria2
@@ -167,6 +167,7 @@ svn co https://github.com/sbwml/luci-app-mosdns/trunk/mosdns mosdns
 svn co https://github.com/NateLol/luci-app-oled/trunk luci-app-oled
 svn co https://github.com/jerrykuku/luci-app-ttnode/trunk luci-app-ttnode
 svn co https://github.com/zzsj0928/luci-app-pushbot/trunk luci-app-pushbot
+svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav aliyundrive-webdav
 svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav luci-app-aliyundrive-webdav
 # svn co https://github.com/sbwml/luci-app-alist/trunk luci-app-alist
 svn co https://github.com/esirplayground/luci-app-poweroff/trunk luci-app-poweroff
@@ -196,11 +197,12 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-tencentddns lu
 svn co https://github.com/makebl/packages/trunk/luci-app-udpxy luci-app-udpxy    #组播
 ## 禁止联网，访问控制
 svn co https://github.com/k-szuster/luci-access-control/trunk/luci-app-access-control luci-app-access-control
-
+svn co https://github.com/CHDman/luci-app-msd_lite/trunk/luci-app-msd_lite luci-app-msd_lite      #家庭VPN接入
+svn co https://github.com/CHDman/luci-app-msd_lite/trunk/msd_lite msd_lite
 # luci-theme主题插件
 
 #魔改小清新主题
-svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-neobird luci-theme-neobird
+svn co https://github.com/gngpp/luci-theme-design/trunk luci-theme-design
 svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-neobird2 luci-theme-neobird2
 svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-argon luci-theme-argon
 svn co https://github.com/shidahuilang/luci-theme/trunk/luci-app-argon-config luci-app-argon-config
@@ -225,11 +227,14 @@ svn co https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
 svn co https://github.com/coolsnowwolf/luci/trunk/applications/luci-app-v2ray-server luci-app-v2ray-server
 svn co https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
 #svn co https://github.com/vernesong/OpenClash/trunk luci-app-openclash
+#svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
+svn co https://github.com/281677160/openwrt-package/trunk/luci-app-clash luci-app-clash
+
 #rm -rf luci-app-openclash/img
 #svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
 #mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
 #curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
-svn co https://github.com/281677160/openwrt-package/trunk/luci-app-clash luci-app-clash
+
 #svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
 #svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus luci-app-ssr-plus
 svn co https://github.com/kenzok8/small/trunk/luci-app-bypass luci-app-bypass

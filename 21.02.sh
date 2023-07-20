@@ -24,6 +24,8 @@ svn co https://github.com/kenzok8/litte/trunk/luci-app-koolddns luci-app-koolddn
 
 
 ## 天灵 插件
+svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/luci-theme-argon luci-theme-argon
+# svn co https://github.com/immortalwrt/luci/trunk/themes/luci-theme-argon luci-theme-argon
 svn co https://github.com/project-openwrt/openwrt-tmate/trunk openwrt-tmate
 svn co https://github.com/tindy2013/openwrt-subconverter/trunk openwrt-subconverter
 svn co https://github.com/immortalwrt/luci/branches/openwrt-21.02/applications/luci-app-aliddns luci-app-aliddns
