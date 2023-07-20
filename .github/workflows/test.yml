@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [test]
+        target: [lede-17.01]
        
                 #[master,main]
         
