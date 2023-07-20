@@ -1,4 +1,4 @@
-name: Update package
+name: test
 
 on:
   workflow_dispatch:
