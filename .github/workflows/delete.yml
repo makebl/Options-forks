@@ -1,5 +1,5 @@
 
-name: delete
+name: delete清除
 on:
   workflow_dispatch:
 

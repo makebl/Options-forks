@@ -1,10 +1,10 @@
-name: helloworld
+name: openclash
 
 on:
   workflow_dispatch:
   
   schedule:
-   - cron: 0 */12 * * *
+   - cron: 0 0 * * *
 
 env: 
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [helloworld]
+        target: [openclash]
        
                 #[master,main,openwrt-21.02,openwrt-18.06,19.07,21.02]
         
