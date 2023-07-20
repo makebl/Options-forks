@@ -14,8 +14,8 @@ svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server 
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-syncthing luci-app-syncthing     #syncthing同步工具
 svn co https://github.com/Lienol/openwrt-packages/trunk/utils/syncthing syncthing
 
-## passwall依赖
-
+## 依赖
+svn co https://github.com/281677160/openwrt-package/trunk/Lede/relevance
 
 ## sirpdboy 插件
 svn co https://github.com/sirpdboy/luci-app-partexp/trunk luci-app-partexp
