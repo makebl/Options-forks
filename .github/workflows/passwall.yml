@@ -45,7 +45,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         chmod +x ${{ env.DIY_SH }}.sh && chmod +x token.sh
-        rm -fr ${{matrix.target}} && git clone -b ${{matrix.target}} https://github.com/shidahuilang/openwrt-package.git ${{matrix.target}}
+        rm -fr ${{matrix.target}} && git clone -b ${{matrix.target}} https://github.com/makebl/openwrt-package.git ${{matrix.target}}
         cd ${{matrix.target}}
         rm -Rf *
         git rm --cache *
@@ -65,7 +65,7 @@ jobs:
         if [[ ! "${FOLDERPS}" == "1" ]]; then
           git add .
           git commit -m "passwall同步源码于$(TZ='Asia/Shanghai' date +%Y年%m月%d号-%H点%M分)" || true
-          git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/shidahuilang/openwrt-package.git" HEAD:${{matrix.target}}
+          git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/makebl/openwrt-package.git" HEAD:${{matrix.target}}
         else
           echo "缺少文件，放弃同步..."
         fi
