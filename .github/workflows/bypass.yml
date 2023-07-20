@@ -1,4 +1,4 @@
-name: test
+name: bypass
 
 on:
   workflow_dispatch:
