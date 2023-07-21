@@ -3,8 +3,8 @@ name: passwall
 on:
   workflow_dispatch:
   
-  schedule:
-    - cron: 0 21 * * *
+#  schedule:
+#    - cron: 0 21 * * *
 
 env: 
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
