@@ -140,7 +140,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb lua-maxminddb
 
 ## coolsnowwolf 插件
 git clone https://github.com/coolsnowwolf/luci ddluci
-# cp -Rf ddluci/applications/luci-app-netdata ./luci-app-netdata
+cp -Rf ddluci/applications/luci-app-netdata ./luci-app-netdata
 cp -Rf ddluci/applications/luci-app-pushbot ./luci-app-pushbot
 cp -Rf ddluci/applications/luci-app-vlmcsd ./luci-app-vlmcsd
 cp -Rf ddluci/applications/luci-app-diskman ./luci-app-diskman
@@ -150,7 +150,7 @@ git clone https://github.com/coolsnowwolf/packages ddpackages
 cp -Rf ddpackages/net/vlmcsd ./vlmcsd
 cp -Rf ddpackages/net/shadowsocks-libev ./shadowsocks-libev
 cp -Rf ddpackages/net/kcptun ./kcptun
-# cp -Rf ddpackages/admin/netdata ./netdata
+cp -Rf ddpackages/admin/netdata ./netdata
 cp -Rf ddpackages/multimedia/UnblockNeteaseMusic-Go ./UnblockNeteaseMusic-Go
 cp -Rf ddpackages/multimedia/UnblockNeteaseMusic ./UnblockNeteaseMusic
 cp -Rf ddpackages/utils/parted ./parted
