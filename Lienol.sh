@@ -1,357 +1,274 @@
 #!/bin/bash
-# https://github.com/shidahuilang/openwrt
-# common Module by dahuilang
+## https://github.com/281677160/AutoBuild-OpenWrt
+## common Module by 28677160
 
 
-## Lienol大插件
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-control-timewol luci-app-control-timewol
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-control-webrestriction luci-app-control-webrestriction
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-control-weburl luci-app-control-weburl
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-fileassistant luci-app-fileassistant  #文件助手
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-nginx-pingos luci-app-nginx-pingos
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-pppoe-server luci-app-pppoe-server     # 宽带接入认证服务器
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-ssr-mudb-server luci-app-ssr-mudb-server
-svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-syncthing luci-app-syncthing     #syncthing同步工具
-svn co https://github.com/Lienol/openwrt-packages/trunk/utils/syncthing syncthing
+## sbwml 插件
+git clone https://github.com/sbwml/luci-app-alist alist2
+mv alist2/* ./
+git clone https://github.com/sbwml/luci-app-mosdns mosdnszz
+mv mosdnszz/* ./
+git clone https://github.com/sbwml/v2ray-geodata v2ray-geodata
 
-## 依赖文件
-svn co https://github.com/281677160/openwrt-package/trunk/relevance relevance
+## istore
+git clone https://github.com/linkease/nas-packages
+mv nas-packages/* ./
+git clone https://github.com/linkease/nas-packages-luci
+mv nas-packages-luci/luci/* ./
+rm -rf luci-app-unishare
+rm -rf network/services/unishare
+git clone https://github.com/linkease/istore luci-app-store
 
 ## sirpdboy 插件
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-wifidog luci-app-wifidog
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-wrtbwmon luci-app-wrtbwmon
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/wrtbwmon wrtbwmon
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-switch-lan-play luci-app-switch-lan-play
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/switch-lan-play switch-lan-play
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-rebootschedule luci-app-rebootschedule
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-onliner luci-app-onliner
-svn co https://github.com/sirpdboy/luci-app-advanced/trunk luci-app-advanced
-svn co https://github.com/sirpdboy/luci-app-netdata/trunk luci-app-netdata
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/netdata netdata
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome luci-app-adguardhome
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/adguardhome adguardhome
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-eqos luci-app-eqos
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-koolproxyR luci-app-koolproxyR
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-dnspod luci-app-dnspod
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-wizard luci-app-wizard
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-autotimeset luci-app-autotimeset
-svn co https://github.com/sirpdboy/luci-app-poweroffdevice/trunk luci-app-poweroffdevice
-svn co https://github.com/kenzok8/openwrt-packages/trunk/sagernet-core sagernet-core
-svn co https://github.com/kenzok8/jell/trunk/luci-app-iperf luci-app-iperf
-svn co https://github.com/kenzok8/jell/trunk/luci-app-npc luci-app-npc
-svn co https://github.com/kenzok8/jell/trunk/luci-app-nps luci-app-nps
-svn co https://github.com/kenzok8/jell/trunk/UnblockNeteaseMusic-Go UnblockNeteaseMusic-Go
-svn co https://github.com/kenzok8/jell/trunk/aliyundrive-fuse aliyundrive-fuse
-svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse luci-app-aliyundrive-fuse
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-dnsfilter luci-app-dnsfilter
-svn co https://github.com/kenzok8/jell/trunk/luci-app-cpufreq luci-app-cpufreq
-svn co https://github.com/kenzok8/jell/trunk/aliyundrive-webdav aliyundrive-webdav
-svn co https://github.com/kenzok8/litte/trunk/luci-app-koolddns luci-app-koolddns
-svn co https://github.com/kenzok8/jell/trunk/luci-app-adbyby-plus luci-app-adbyby-plus
+git clone https://github.com/sirpdboy/sirpdboy-package
+cp -Rf sirpdboy-package/luci-app-wifidog ./luci-app-wifidog
+cp -Rf sirpdboy-package/luci-app-switch-lan-play ./luci-app-switch-lan-play
+cp -Rf sirpdboy-package/switch-lan-play ./switch-lan-play
+cp -Rf sirpdboy-package/luci-app-advanced ./luci-app-advanced
+cp -Rf sirpdboy-package/luci-app-timecontrol ./luci-app-timecontrol
+cp -Rf sirpdboy-package/ddns-go/* ./
+cp -Rf sirpdboy-package/luci-app-wolplus ./luci-app-wolplus
+cp -Rf sirpdboy-package/luci-app-cupsd ./luci-app-cupsd
+rm -rf sirpdboy-package
+git clone https://github.com/sirpdboy/luci-app-partexp.git luci-app-partexp
+git clone https://github.com/sirpdboy/luci-app-lucky app-lucky && mv app-lucky/* ./
+git clone https://github.com/sirpdboy/luci-app-autotimeset luci-app-autotimeset
+git clone https://github.com/sirpdboy/luci-app-netwizard luci-app-netwizard
 
+# 官方的
+git clone -b openwrt-22.03 https://github.com/openwrt/packages gf2203
+cp -Rf gf2203/utils/antfs-mount ./antfs-mount
+cp -Rf gf2203//kernel/antfs ./antfs
+rm -rf gf2203
 
-# svn co https://github.com/kenzok8/jell/tree/main/go-aliyundrive-webdav/trunk go-aliyundrive-webdav
-# svn co https://github.com/kenzok8/jell/trunk/aria2 aria2
-# svn co https://github.com/kenzok8/jell/trunk/luci-app-openvpn-server luci-app-openvpn-server
-# svn co https://github.com/kenzok8/jell/trunk/luci-app-transmission luci-app-transmission
-# svn co https://github.com/kenzok78/small-package/trunk/luci-app-argon-config luci-app-argon-config
-# svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-easymesh luci-app-easymesh
-
-## store应用商店 插件
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-store luci-app-store
-svn co https://github.com/linkease/istore-ui/trunk/app-store-ui app-store-ui
-
-## 依赖
-svn co https://github.com/linkease/istore/trunk/luci/luci-lib-taskd luci-lib-taskd
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-xterm luci-lib-xterm
-svn co https://github.com/kiddin9/openwrt-packages/trunk/taskd taskd
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-lib-iform luci-lib-iform  
-svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-cupsd luci-app-cupsd
-svn co https://github.com/xiangfeidexiaohuo/op-ipkg/trunk/luci-lib-ipkg luci-lib-ipkg
-
-## 网卡
-# svn co https://github.com/kiddin9/openwrt-packages/trunk/r8125 r8125
-# svn co https://github.com/kiddin9/openwrt-packages/trunk/r8168 r8168
-svn co https://github.com/kiddin9/openwrt-packages/trunk/rtl8821cu rtl8821cu
-svn co https://github.com/kiddin9/openwrt-packages/trunk/rtl88x2bu rtl88x2bu
+## coolsnowwolf 插件
+git clone https://github.com/coolsnowwolf/luci ddluci
+cp -Rf ddluci/applications/luci-app-pushbot ./luci-app-pushbot
+cp -Rf ddluci/applications/luci-app-aliyundrive-webdav ./luci-app-aliyundrive-webdav
+cp -Rf ddluci/applications/luci-app-serverchan ./luci-app-serverchan
+rm -rf ddluci
+git clone https://github.com/coolsnowwolf/packages ddpackages
+cp -Rf ddpackages/multimedia/aliyundrive-webdav ./aliyundrive-webdav
+cp -Rf ddpackages/multimedia/aliyundrive-fuse ./aliyundrive-fuse
+cp -Rf ddpackages/net/pdnsd-alt ./pdnsd-alt
+cp -Rf ddpackages/net/shadowsocks-libev ./shadowsocks-libev
+cp -Rf ddpackages/net/kcptun ./kcptun
+rm -rf ddpackages
+git clone https://github.com/coolsnowwolf/lede
+cp -Rf lede/package/lean/automount ./automount
+cp -Rf lede/package/lean/autosamba ./autosamba
+cp -Rf lede/package/lean/mt ./mt
+rm -rf lede
 
 ## 天灵 插件
-svn co https://github.com/project-openwrt/openwrt-tmate/trunk openwrt-tmate
-svn co https://github.com/tindy2013/openwrt-subconverter/trunk openwrt-subconverter
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-aliddns luci-app-aliddns
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-gost luci-app-gost
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/gost gost
-svn co https://github.com/immortalwrt-collections/openwrt-gowebdav/trunk luci-app-gowebdav
-svn co https://github.com/immortalwrt-collections/luci-app-unblockneteasemusic/trunk luci-app-unblockneteasemusic
-svn co https://github.com/immortalwrt-collections/OpenAppFilter/trunk luci-app-oaf
-#mkdir -p luci-app-oaf/oaf/src
-#curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/app_filter.c > luci-app-oaf/oaf/src/app_filter.c
+svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06/applications/luci-app-iptvhelper
+svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/iptvhelper
 
-svn co https://github.com/ntlf9t/openwrt_oscam/trunk openwrt_oscam
-svn co https://github.com/ntlf9t/luci-app-oscam/trunk luci-app-oscam
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-filebrowser luci-app-filebrowser
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/filebrowser filebrowser
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-udp2raw luci-app-udp2raw
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/udp2raw udp2raw
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-cpulimit luci-app-cpulimit
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/cpulimit-ng cpulimit-ng
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/cpulimit cpulimit
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/cups-bjnp cups-bjnp
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/cups cups
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-iptvhelper luci-app-iptvhelper
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/iptvhelper iptvhelper
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-socat luci-app-socat
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/socat socat
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-smartinfo luci-app-smartinfo
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/utils/smartmontools smartmontools
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/applications/luci-app-mentohust luci-app-mentohust
-svn co https://github.com/immortalwrt/packages/branches/openwrt-18.06/net/mentohust mentohust
+git clone https://github.com/immortalwrt/Rclone-OpenWrt && mv -f Rclone-OpenWrt/* ./
+git clone https://github.com/project-openwrt/openwrt-tmate openwrt-tmate
+git clone https://github.com/tindy2013/openwrt-subconverter openwrt-subconverter
+git clone https://github.com/destan19/OpenAppFilter && mv -f OpenAppFilter/* ./
 
+git clone -b master https://github.com/immortalwrt/luci tlluci
+cp -Rf tlluci/applications/luci-app-aliddns ./luci-app-aliddns
+cp -Rf tlluci/applications/luci-app-gowebdav ./luci-app-gowebdav
+cp -Rf tlluci/applications/luci-app-unblockneteasemusic ./luci-app-unblockneteasemusic
+cp -Rf tlluci/applications/luci-app-mentohust ./luci-app-mentohust
+cp -Rf tlluci/applications/luci-app-oscam ./luci-app-oscam
+cp -Rf tlluci/applications/luci-app-filebrowser ./luci-app-filebrowser
+cp -Rf tlluci/applications/luci-app-udp2raw ./luci-app-udp2raw
+cp -Rf tlluci/applications/luci-app-cpulimit ./luci-app-cpulimit
+cp -Rf tlluci/applications/luci-app-syncthing ./luci-app-syncthing
+rm -rf tlluci
+git clone -b master https://github.com/immortalwrt/packages tlpackages
+cp -Rf tlpackages/net/gowebdav ./gowebdav
+cp -Rf tlpackages/net/udp2raw ./udp2raw
+cp -Rf tlpackages/net/oscam ./oscam
+cp -Rf tlpackages/net/socat ./socat
+cp -Rf tlpackages/net/mentohust ./mentohust
+cp -Rf tlpackages/utils/cpulimit-ng ./cpulimit-ng
+cp -Rf tlpackages/utils/cpulimit ./cpulimit
+cp -Rf tlpackages/utils/filebrowser ./filebrowser
+cp -Rf tlpackages/utils/smartmontools ./smartmontools
+cp -Rf tlpackages/utils/syncthing ./syncthing
+rm -rf tlpackages
 
-# 易有云团队linkease插件
-svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-ddnsto luci-app-ddnsto
-svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-linkease luci-app-linkease
-svn co https://github.com/linkease/nas-packages-luci/trunk/luci/luci-app-quickstart luci-app-quickstart
-svn co https://github.com/linkease/nas-packages/trunk/network/services/ddnsto ddnsto
-svn co https://github.com/linkease/nas-packages/trunk/network/services/linkease linkease
-svn co https://github.com/linkease/nas-packages/trunk/network/services/quickstart quickstart
-svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-wxedge luci-app-wxedge     #网心云
-svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-jellyfin luci-app-jellyfin  #jellyfin
-svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-heimdall luci-app-heimdall
-svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-homeassistant luci-app-homeassistant  #智能家居
-svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-jackett luci-app-jackett
-svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-nastools luci-app-nastools
-svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-nextcloud luci-app-nextcloud
-svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-ubuntu luci-app-ubuntu
-svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-xunyou luci-app-xunyou
-svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/xunyou xunyou
-svn co https://github.com/linkease/istore-packages/trunk/homebox homebox
-svn co https://github.com/linkease/istore-packages/trunk/luci-app-homebox luci-app-homebox          #openwrt内网测速
-svn co https://github.com/linkease/istore-packages/trunk/luci-app-kodexplorer luci-app-kodexplorer  #KOD可道云私人网盘
+## Hyy2001X插件
+git clone https://github.com/Hyy2001X/AutoBuild-Packages
+cp -Rf AutoBuild-Packages/luci-app-natter ./luci-app-natter
+cp -Rf AutoBuild-Packages/natter ./natter
+cp -Rf AutoBuild-Packages/upx-static ./upx-static
+cp -Rf AutoBuild-Packages/luci-app-onliner ./luci-app-onliner
+cp -Rf AutoBuild-Packages/luci-app-shutdown ./luci-app-shutdown
+cp -Rf AutoBuild-Packages/luci-app-webd ./luci-app-webd
+cp -Rf AutoBuild-Packages/webd ./webd
+rm -rf AutoBuild-Packages
 
 ## 零碎拉取的插件
-svn co https://github.com/pymumu/luci-app-smartdns/branches/lede luci-app-smartdns
-svn co https://github.com/pymumu/openwrt-smartdns/trunk smartdns
-svn co https://github.com/siwind/luci-app-wolplus/trunk luci-app-wolplus
-svn co https://github.com/rufengsuixing/luci-app-autoipsetadder/trunk luci-app-autoipsetadder
-svn co https://github.com/msylgj/luci-app-tencentddns/trunk luci-app-tencentddns
-svn co https://github.com/sbwml/luci-app-mosdns/trunk/luci-app-mosdns luci-app-mosdns
-svn co https://github.com/sbwml/luci-app-mosdns/trunk/mosdns mosdns
-svn co https://github.com/NateLol/luci-app-oled/trunk luci-app-oled
-svn co https://github.com/jerrykuku/luci-app-ttnode/trunk luci-app-ttnode
-svn co https://github.com/zzsj0928/luci-app-pushbot/trunk luci-app-pushbot
-svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav luci-app-aliyundrive-webdav
-svn co https://github.com/sbwml/luci-app-alist/trunk luci-app-alist
-svn co https://github.com/esirplayground/luci-app-poweroff/trunk luci-app-poweroff
-svn co https://github.com/izilzty/luci-app-chinadns-ng/trunk luci-app-chinadns-ng
-svn co https://github.com/lisaac/luci-app-dockerman/trunk/applications/luci-app-dockerman luci-app-dockerman  #docker图形界面
-svn co https://github.com/lisaac/luci-lib-docker/trunk/collections/luci-lib-docker luci-lib-docker        
-svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman luci-app-diskman     #磁盘管理
-svn co https://github.com/openwrt/luci/trunk/applications/luci-app-snmpd luci-app-snmpd
-svn co https://github.com/openwrt/luci/trunk/applications/luci-app-frpc luci-app-frpc
-svn co https://github.com/Hyy2001X/AutoBuild-Packages/trunk/luci-app-webd luci-app-webd
-svn co https://github.com/Hyy2001X/AutoBuild-Packages/trunk/webd webd
-svn co https://github.com/Hyy2001X/AutoBuild-Packages/trunk/luci-app-shutdown luci-app-shutdown          ##一键关闭/重启设备
+git clone https://github.com/281677160/AdGuardHome ardhome && mv -f ardhome/* ./
+git clone https://github.com/msylgj/luci-app-tencentddns luci-app-tencentddns
+git clone https://github.com/jerrykuku/luci-app-ttnode luci-app-ttnode
+git clone https://github.com/iwrt/luci-app-ikoolproxy luci-app-ikoolproxy
+git clone https://github.com/ximiTech/msd_lite.git msd_lite
+git clone https://github.com/ximiTech/luci-app-msd_lite.git luci-app-msd_lite
+git clone https://github.com/esirplayground/luci-app-poweroff luci-app-poweroff
+git clone https://github.com/NateLol/luci-app-oled luci-app-oled
+git clone https://github.com/lisaac/luci-app-dockerman kerman && mv -f kerman/applications/luci-app-dockerman ./luci-app-dockerman
+git clone https://github.com/rufengsuixing/luci-app-autoipsetadder luci-app-autoipsetadder
+git clone https://github.com/ximliu/luci-app-smartinfo luci-app-smartinfo
+git clone https://github.com/frainzy1477/luci-app-clash luci-app-clash
 
-svn co https://github.com/esirplayground/LingTiGameAcc/trunk LingTiGameAcc                       #灵缇加速器
-svn co https://github.com/esirplayground/luci-app-LingTiGameAcc/trunk luci-app-LingTiGameAcc     #灵缇加速器
-# svn co https://github.com/openwrt/luci/trunk/applications/luci-app-frps luci-app-frps
-# svn co https://github.com/jerrykuku/luci-app-go-aliyundrive-webdav/trunk luci-app-go-aliyundrive-webdav
+git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
+git clone -b luci https://github.com/pexcn/openwrt-chinadns-ng.git luci-app-chinadns-ng
+git clone https://github.com/tty228/luci-app-nodogsplash luci-app-nodogsplash
+git clone https://github.com/KFERMercer/luci-app-tcpdump.git luci-app-tcpdump
+git clone https://github.com/owner888/luci-app-3ginfo-zh_cn
+cp -Rf luci-app-3ginfo-zh_cn/luci-app-3ginfo ./luci-app-3ginfo
+cp -Rf luci-app-3ginfo-zh_cn/3ginfo ./3ginfo
+rm -rf luci-app-3ginfo-zh_cn
 
+## sundaqiang
+git clone https://github.com/sundaqiang/openwrt-packages sdpackages
+cp -Rf sdpackages/luci-app-supervisord ./luci-app-supervisord
+cp -Rf sdpackages/luci-app-nginx-manager ./luci-app-nginx-manager
+rm -rf sdpackages
 
-## 禁止联网，访问控制
-svn co https://github.com/k-szuster/luci-access-control/trunk/luci-app-access-control luci-app-access-control
+## luci-app-gost
+git clone https://github.com/quintus-lab/openwrt-package appgost
+cp -Rf appgost/luci-app-gost ./luci-app-gost
+cp -Rf appgost/gost ./gost
+rm -rf appgost
 
-# luci-theme主题插件
+# luci-app-vssr
+git clone https://github.com/jerrykuku/luci-app-vssr luci-app-vssr
+git clone https://github.com/jerrykuku/lua-maxminddb lua-maxminddb
 
+## N1和晶晨系列盒子专用的安装和升级固件工具
+git clone https://github.com/ophub/luci-app-amlogic amlogi && cp -Rf amlogi/luci-app-amlogic ./luci-app-amlogic && rm -rf amlogi
 
-#魔改小清新主题
-svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-neobird2 luci-theme-neobird2
+## CF优先IP
+git clone https://github.com/mingxiaoyu/luci-app-cloudflarespeedtest clud && cp -Rf clud/applications/luci-app-cloudflarespeedtest ./luci-app-cloudflarespeedtest
+git clone https://github.com/immortalwrt-collections/openwrt-cdnspeedtest cdnspeedtest
 
-svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-argon luci-theme-argon
-svn co https://github.com/shidahuilang/luci-theme/trunk/luci-app-argon-config luci-app-argon-config
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/themes/luci-theme-opentomcat luci-theme-opentomcat
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-theme-ifit luci-theme-ifit
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-theme-opentomato luci-theme-opentomato
-svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/themes/luci-theme-rosy luci-theme-rosy
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-atmaterial_new luci-theme-atmaterial_new
-svn co https://github.com/Aslin-Ameng/luci-theme-Light/trunk/luci-theme-Light luci-theme-Light
-svn co https://github.com/apollo-ng/luci-theme-darkmatter/trunk luci-theme-darkmatter
-svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-theme-btmod luci-theme-btmod
-svn co https://github.com/kenzok8/jell/trunk/luci-themedog luci-themedog
-svn co https://github.com/sirpdboy/luci-theme-opentopd luci-theme-opentopd
+## 拼拼WiFi，选择以下项目（必选）
+## Wiwiz/PinPinWiFi -> Portal  --->
+git clone https://github.com/wiwizcom/WiFiPortal Wiwiz-PinPinWiFi
 
 
 
-
-# N1和晶晨系列盒子专用的安装和升级固件工具
-svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic luci-app-amlogic
-
-# vssr,openclash,clash翻墙梯子
-svn co https://github.com/jerrykuku/luci-app-vssr/trunk luci-app-vssr
-svn co https://github.com/jerrykuku/lua-maxminddb/trunk lua-maxminddb
-svn co https://github.com/vernesong/OpenClash/trunk luci-app-openclash
-rm -rf luci-app-openclash/img
-svn co https://github.com/frainzy1477/luci-app-clash/trunk luci-app-clash
-#svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
-#svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
-#svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus luci-app-ssr-plus
-svn co https://github.com/kenzok8/small/trunk/luci-app-bypass luci-app-bypass
-svn co https://github.com/shidahuilang/OpenClash/trunk luci-app-xiaolaoshu
-rm -rf luci-app-xiaolaoshu/img
-
-
-# CF优先IP
-svn co https://github.com/mingxiaoyu/luci-app-cloudflarespeedtest/trunk/applications/luci-app-cloudflarespeedtest luci-app-cloudflarespeedtest
-svn co https://github.com/immortalwrt-collections/openwrt-cdnspeedtest/trunk/cdnspeedtest cdnspeedtest
-mkdir -p luci-app-cloudflarespeedtest/po/zh-cn
-curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/cloudflarespeedtest.po > luci-app-cloudflarespeedtest/po/zh-cn/cloudflarespeedtest.po
-
-
-
-# 拼拼WiFi，选择以下项目（必选）
-# 1、LuCI ---> Applications ---> luci-app-eqos
-# 2、Network ---> Captive Portals ---> wifidog-wiwiz
-svn co https://github.com/wiwizcom/WiFiPortal/trunk/eqos-master-wiwiz eqos-master-wiwiz
-svn co https://github.com/wiwizcom/WiFiPortal/trunk/wifidog-wiwiz wifidog-wiwiz
-
-
-
-# 增加filebrowser的用户名跟密码提示
-sed -i "s/助您方便的管理设备上的文件。"/助您方便的管理设备上的文件，初始用户名跟密码都为：admin"/g" luci-app-filebrowser/luasrc/model/cbi/filebrowser.lua
-
-
-
-
-# 对luci-app-advanced高级设置微调
-# sed -i "s/文件管理/文件助手/g" luci-app-advanced/luasrc/controller/fileassistant.lua
-# sed -i "s/文件管理【集成上传删除及安装，非专业人员请谨慎操作】/文件助手【集成上传删除及安装，文件传输升级版，执行删除文件时请谨慎】/g" luci-app-advanced/luasrc/view/fileassistant.htm
-
-
-# luci-app-rebootschedule更改菜单位置
-Control="luci-app-rebootschedule/luasrc/controller/rebootschedule.lua"
-cat >$Control <<-EOF
-module("luci.controller.rebootschedule", package.seeall)
-function index()
-	if not nixio.fs.access("/etc/config/rebootschedule") then
-		return
-	end
-	
-	entry({"admin", "system", "rebootschedule"}, cbi("rebootschedule"), _("定时任务"),88)
-end
-EOF
-
-
-# 修改天灵插件的路径
-sed -i 's#include ../../luci.mk#include $(TOPDIR)/feeds/luci/luci.mk#g'  `grep "include ../../luci.mk" -rl ./`
-sed -i 's#include ../../lang/golang/golang-package.mk#include $(TOPDIR)/feeds/packages/lang/golang/golang-package.mk#g'  `grep "include ../../lang/golang/golang-package.mk" -rl ./`
-
-
-
-# 生成完整目录清单
+## 生成完整目录清单
 cat > Update.txt <<EOF
+OpenAppFilter
+Rclone-OpenWrt
+Wiwiz-PinPinWiFi
 adguardhome
-app-store-ui
+alist
+alist2
+aliyundrive-fuse
+aliyundrive-webdav
+antfs-mount
+antfs
+app-lucky
+ardhome
+assets
+automount
+autosamba
 cdnspeedtest
-cpulimit
+clud
 cpulimit-ng
-cups
-cups-bjnp
-ddnsto
-eqos-master-wiwiz
+cpulimit
 filebrowser
 gost
+gowebdav
 iptvhelper
-linkease
+kcptun
+kerman
 lua-maxminddb
 luci-app-adguardhome
 luci-app-advanced
 luci-app-aliddns
+luci-app-alist
+luci-app-aliyundrive-webdav
 luci-app-amlogic
-luci-app-argon-config
 luci-app-autoipsetadder
+luci-app-autotimeset
 luci-app-clash
 luci-app-cloudflarespeedtest
-luci-app-control-timewol
-luci-app-control-webrestriction
-luci-app-control-weburl
 luci-app-cpulimit
 luci-app-cupsd
+luci-app-ddns-go
 luci-app-ddnsto
-luci-app-fileassistant
+luci-app-dockerman
 luci-app-filebrowser
 luci-app-gost
 luci-app-gowebdav
+luci-app-ikoolproxy
 luci-app-iptvhelper
-luci-app-koolddns
+luci-app-istorex
 luci-app-linkease
-luci-app-wizard
+luci-app-lucky
 luci-app-mentohust
 luci-app-mosdns
-luci-app-netdata
-luci-app-nginx-pingos
+luci-app-msd_lite
+luci-app-natter
+luci-app-netwizard
+luci-app-nginx-manager
 luci-app-oaf
 luci-app-oled
 luci-app-onliner
-luci-app-openclash
 luci-app-oscam
+luci-app-partexp
 luci-app-poweroff
-luci-app-pppoe-server
+luci-app-pushbot
 luci-app-quickstart
-luci-app-rebootschedule
-luci-app-smartdns
+luci-app-rclone
+luci-app-serverchan
+luci-app-shutdown
 luci-app-smartinfo
-luci-app-socat
-luci-app-ssr-mudb-server
 luci-app-store
+luci-app-supervisord
 luci-app-switch-lan-play
 luci-app-syncthing
 luci-app-tencentddns
+luci-app-timecontrol
 luci-app-ttnode
 luci-app-udp2raw
 luci-app-unblockneteasemusic
 luci-app-vssr
-luci-app-xunyou
-luci-app-ubuntu
-luci-app-nextcloud
-luci-app-nastools
-luci-app-jackett
-luci-app-homeassistant
-luci-app-heimdall
-luci-app-jellyfin
-luci-app-wxedge
+luci-app-webd
 luci-app-wifidog
 luci-app-wolplus
-luci-app-xiaolaoshu
-luci-app-wrtbwmon
-luci-theme-Light
-luci-theme-argon
-luci-theme-atmaterial_new
-luci-theme-darkmatter
-luci-theme-infinityfreedom
-luci-theme-neobird
-luci-theme-opentomcat
-luci-theme-rosy
+luci-lib-iform
+lucky
 mentohust
-netdata
+mosdns
+mosdnszz
+msd_lite
+mt
+multimedia
+nas-packages-luci
+nas-packages
+natter
+network
+oaf
+open-app-filter
 openwrt-subconverter
 openwrt-tmate
-openwrt_oscam
-quickstart
-smartdns
+oscam
+packr
+pdnsd-alt
+rclone-ng
+rclone-webui-react
+rclone
+shadowsocks-libev
 smartmontools
 socat
 switch-lan-play
 syncthing
 udp2raw
-wifidog-wiwiz
-wrtbwmon
+upx-static
+v2dat
+v2ray-geodata
+webd
 EOF
-
-#TG通知
-if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🚫插件源码同步失败，分支：Package_$matrix_target，失败列表：$FOLDERSX......"; else curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🎉openwrt插件源码同步成功，分支：Package_$matrix_target......"; fi
-
-# 判断变量值，如果有效发送微信通知
-if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
-
 exit 0

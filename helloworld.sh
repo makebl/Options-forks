@@ -1,15 +1,23 @@
 #!/bin/bash
 
-svn co https://github.com/fw876/helloworld/trunk relevance
-rm -rf relevance/luci-app-ssr-plus
-rm -rf relevance/.github/workflows
-svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus luci-app-ssr-plus
+git clone https://github.com/fw876/helloworld.git
+mv -f helloworld/* ./
+rm -rf helloworld
+
 
 # 生成完整目录清单
 cat > Update.txt <<EOF
-UpdateList.txt
+chinadns-ng
+dns2socks
+dns2tcp
+gn
+hysteria
+ipt2socks
+lua-neturl
 luci-app-ssr-plus
+microsocks
 naiveproxy
+redsocks2
 shadowsocks-rust
 shadowsocksr-libev
 simple-obfs
