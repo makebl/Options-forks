@@ -111,7 +111,7 @@ cp -Rf lang1/openwrt/luci-app-aliyundrive-webdav ./luci-app-aliyundrive-webdav
 git clone https://github.com/linkease/openwrt-app-actions lang
 cp -Rf lang/openwrt-app-actions/luci-app-wxedge ./luci-app-wxedge
 cp -Rf lang/openwrt-app-actions/luci-app-homeassistant ./luci-app-homeassistant
-git clone https://github.com/sirpdboy/luci-app-netdata luci-app-netdata
+git clone https://github.com/sirpdboy/luci-app-netdata luci-app-netdata1
 
 git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
 git clone -b luci https://github.com/pexcn/openwrt-chinadns-ng.git luci-app-chinadns-ng
