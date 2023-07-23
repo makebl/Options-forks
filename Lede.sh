@@ -1,6 +1,6 @@
 #!/bin/bash
-## https://github.com/281677160/AutoBuild-OpenWrt
-## common Module by 28677160
+## https://github.com/shidahuilang/OpenWrt
+## common Module by shidahuilang
 
 ## sbwml 插件
 git clone https://github.com/sbwml/luci-app-alist alist2
@@ -102,6 +102,17 @@ git clone https://github.com/NateLol/luci-app-oled luci-app-oled
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder luci-app-autoipsetadder
 git clone https://github.com/ximliu/luci-app-smartinfo luci-app-smartinfo
 git clone https://github.com/frainzy1477/luci-app-clash luci-app-clash
+git clone https://github.com/kenzok8/small
+cp -Rf small/luci-app-bypass ./luci-app-bypass
+git clone https://github.com/shidahuilang/OpenClash luci-app-xiaolaoshu
+rm -rf luci-app-xiaolaoshu/img
+git clone https://github.com/messense/aliyundrive-webdav lang1
+cp -Rf lang1/openwrt/luci-app-aliyundrive-webdav ./luci-app-aliyundrive-webdav
+git clone https://github.com/linkease/openwrt-app-actions lang
+cp -Rf lang/openwrt-app-actions/luci-app-wxedge ./luci-app-wxedge
+cp -Rf lang/openwrt-app-actions/luci-app-homeassistant ./luci-app-homeassistant
+# svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/aliyundrive-webdav aliyundrive-webdav
+
 
 git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
 git clone -b luci https://github.com/pexcn/openwrt-chinadns-ng.git luci-app-chinadns-ng
@@ -289,6 +300,14 @@ v2dat
 v2ray-geodata
 vlmcsd
 webd
+
+#TG通知
+if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🚫插件库同步失败，分支：Lede，失败列表：$FOLDERSX......"; else curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🎉插件库同步成功，分支：Lede"; fi
+
+# 判断变量值，如果有效发送微信通知
+if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
+
+exit 0
 EOF
 
 exit 0
