@@ -147,7 +147,6 @@ cp -Rf ddpackages/net/vlmcsd ./vlmcsd
 cp -Rf ddpackages/net/shadowsocks-libev ./shadowsocks-libev
 cp -Rf ddpackages/net/kcptun ./kcptun
 cp -Rf ddpackages/admin/netdata ./netdata
-cp -Rf ddpackages/admin/netdata netdata
 cp -Rf ddpackages/multimedia/UnblockNeteaseMusic-Go ./UnblockNeteaseMusic-Go
 cp -Rf ddpackages/multimedia/UnblockNeteaseMusic ./UnblockNeteaseMusic
 cp -Rf ddpackages/utils/parted ./parted
