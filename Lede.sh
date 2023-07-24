@@ -102,15 +102,11 @@ git clone https://github.com/NateLol/luci-app-oled luci-app-oled
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder luci-app-autoipsetadder
 git clone https://github.com/ximliu/luci-app-smartinfo luci-app-smartinfo
 git clone https://github.com/frainzy1477/luci-app-clash luci-app-clash
-git clone https://github.com/kenzok8/small
-cp -Rf small/luci-app-bypass ./luci-app-bypass
+# git clone https://github.com/kenzok8/small
+# cp -Rf small/luci-app-bypass ./luci-app-bypass
 git clone https://github.com/shidahuilang/OpenClash luci-app-xiaolaoshu
 rm -rf luci-app-xiaolaoshu/img
-git clone https://github.com/messense/aliyundrive-webdav lang1
-cp -Rf lang1/openwrt/luci-app-aliyundrive-webdav ./luci-app-aliyundrive-webdav
-git clone https://github.com/linkease/openwrt-app-actions lang
-cp -Rf lang/openwrt-app-actions/luci-app-wxedge ./luci-app-wxedge
-cp -Rf lang/openwrt-app-actions/luci-app-homeassistant ./luci-app-homeassistant
+# cp -Rf lang/openwrt-app-actions/luci-app-wxedge ./luci-app-wxedge
 # git clone https://github.com/sirpdboy/luci-app-netdata luci-app-netdata
 
 git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
@@ -151,6 +147,7 @@ cp -Rf ddpackages/net/vlmcsd ./vlmcsd
 cp -Rf ddpackages/net/shadowsocks-libev ./shadowsocks-libev
 cp -Rf ddpackages/net/kcptun ./kcptun
 cp -Rf ddpackages/admin/netdata ./netdata
+cp -Rf ddpackages/admin/netdata netdata
 cp -Rf ddpackages/multimedia/UnblockNeteaseMusic-Go ./UnblockNeteaseMusic-Go
 cp -Rf ddpackages/multimedia/UnblockNeteaseMusic ./UnblockNeteaseMusic
 cp -Rf ddpackages/utils/parted ./parted
