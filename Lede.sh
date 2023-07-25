@@ -102,13 +102,10 @@ git clone https://github.com/NateLol/luci-app-oled luci-app-oled
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder luci-app-autoipsetadder
 git clone https://github.com/ximliu/luci-app-smartinfo luci-app-smartinfo
 git clone https://github.com/frainzy1477/luci-app-clash luci-app-clash
-# git clone https://github.com/kenzok8/small
-# cp -Rf small/luci-app-bypass ./luci-app-bypass
+
 git clone https://github.com/shidahuilang/OpenClash luci-app-xiaolaoshu
 rm -rf luci-app-xiaolaoshu/img
-# cp -Rf lang/openwrt-app-actions/luci-app-wxedge ./luci-app-wxedge
 # git clone https://github.com/sirpdboy/luci-app-netdata luci-app-netdata
-
 svn co https://github.com/vernesong/OpenClash/trunk luci-app-openclash
 rm -rf luci-app-openclash/img
 
@@ -300,7 +297,7 @@ vlmcsd
 webd
 
 #TG通知
-if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🚫插件库同步失败，分支：Lede，失败列表：$FOLDERSX......"; else curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🎉插件库同步成功，分支：Lede"; fi
+if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🚫插件库同步失败，分支：Lede${{matrix.target}}，失败列表：$FOLDERSX......"; else curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🎉插件库同步成功，分支：Lede${{matrix.target}}"; fi
 
 # 判断变量值，如果有效发送微信通知
 if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
