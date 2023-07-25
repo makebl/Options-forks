@@ -105,9 +105,13 @@ git clone https://github.com/frainzy1477/luci-app-clash luci-app-clash
 
 git clone https://github.com/shidahuilang/OpenClash luci-app-xiaolaoshu
 rm -rf luci-app-xiaolaoshu/img
-# git clone https://github.com/sirpdboy/luci-app-netdata luci-app-netdata
+
+svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
+mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
+curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
 
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
+sed -i '/openclash.config.enable/{N;d;}' luci-app-openclash/root/etc/uci-defaults/luci-openclash #OpenClash恢复更新系统开机自启动
 rm -rf luci-app-openclash/img
 
 git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
