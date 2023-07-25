@@ -109,6 +109,9 @@ rm -rf luci-app-xiaolaoshu/img
 # cp -Rf lang/openwrt-app-actions/luci-app-wxedge ./luci-app-wxedge
 # git clone https://github.com/sirpdboy/luci-app-netdata luci-app-netdata
 
+svn co https://github.com/vernesong/OpenClash/trunk luci-app-openclash
+rm -rf luci-app-openclash/img
+
 git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
 git clone -b luci https://github.com/pexcn/openwrt-chinadns-ng.git luci-app-chinadns-ng
 git clone https://github.com/tty228/luci-app-nodogsplash luci-app-nodogsplash
