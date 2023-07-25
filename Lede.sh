@@ -111,6 +111,7 @@ mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
 curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
 
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
+mkdir -p luci-app-openclash/root/etc/openclash/custom/openclash_custom_rules.list
 sed -i '/openclash.config.enable/{N;d;}' luci-app-openclash/root/etc/uci-defaults/luci-openclash #OpenClash恢复更新系统开机自启动
 rm -rf luci-app-openclash/img
 
