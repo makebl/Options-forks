@@ -1,4 +1,4 @@
-name: Update package
+name: Lede
 
 on:
   workflow_dispatch:
