@@ -107,7 +107,7 @@ git clone https://github.com/shidahuilang/OpenClash luci-app-xiaolaoshu
 rm -rf luci-app-xiaolaoshu/img
 # git clone https://github.com/sirpdboy/luci-app-netdata luci-app-netdata
 
-svn co https://github.com/vernesong/OpenClash/tree/trunk/luci-app-openclash luci-app-openclash
+svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
 rm -rf luci-app-openclash/img
 
 git clone https://github.com/pexcn/openwrt-chinadns-ng.git chinadns-ng
