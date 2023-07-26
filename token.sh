@@ -68,7 +68,7 @@ do
 done
 
 ## 修改所有语言包为zh-cn格式，编译时按需改成zh_Hans
-curl -fsSL https://raw.githubusercontent.com/281677160/common/main/language/zh-cn.sh -o zh-cn.sh
+curl -fsSL https://raw.githubusercontent.com/makebl/common/main/language/zh-cn.sh -o zh-cn.sh
 chmod +x zh-cn.sh
 /bin/bash zh-cn.sh
 rm -rf zh-cn.sh
@@ -87,10 +87,13 @@ do
 	mv -f ${b} ../
 done
 
-# 判断变量值，如果有效发送pushplus通知
-if [[ -n "${FOLDERS}" ]]; then
-	curl -k --data token="$PUSH_PLUS_TOKEN" --data title="${FOLDER_NAME}插件同步失败" --data "content=$FOLDERSX" "http://www.pushplus.plus/send"
-fi
+#TG通知
+if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🚫插件源码同步失败，分支：Package_$matrix_target，失败列表：$FOLDERSX......"; else curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🎉openwrt插件源码同步成功，分支：Package_$matrix_target......"; fi
+
+# 判断变量值，如果有效发送微信通知
+if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
+
+exit 0
 
 # 删除对比更新目录列表
 rm -rf Update.txt

@@ -1,6 +1,6 @@
 #!/bin/bash
-# https://github.com/281677160/build-actions
-# common Module by 28677160
+# https://github.com/shidahuilang/openwrt
+# common Module by shidahuilang
 
 # 主题
 git clone -b 18.06 https://github.com/281677160/luci-theme-argon luci-theme-argon
@@ -54,4 +54,14 @@ netkeeper-interception
 netkeeper
 smartdns
 EOF
+exit 0
+#TG通知
+if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🚫插件库同步失败，分支：Theme1${{matrix.target}}，失败列表：$FOLDERSX......"; else curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🎉插件库同步成功，分支：Theme1${{matrix.target}}......"; fi
+
+# 判断变量值，如果有效发送微信通知
+if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
+
+exit 0
+if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
+
 exit 0
