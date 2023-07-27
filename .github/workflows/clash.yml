@@ -1,4 +1,4 @@
-name: Update passwall
+name: clash
 
 on:
   workflow_dispatch:
