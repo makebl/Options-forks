@@ -60,7 +60,7 @@ jobs:
         cd $GITHUB_WORKSPACE/${{matrix.target}}
         git add .
         git commit -m "插件同步源码于$(TZ='Asia/Shanghai' date +%Y年%m月%d号-%H点%M分)" || true
-        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/shidahuilang/openwrt-package.git" HEAD:${{matrix.target}} 
+        git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/makebl/openwrt-package.git" HEAD:${{matrix.target}} 
          
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@v2
