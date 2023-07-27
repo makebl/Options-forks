@@ -13,7 +13,7 @@ env:
   TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
   FANQIANG: PASSPULS
-  DIY_SH: clash
+  DIY_SH: openclash
   TZ: Asia/Shanghai
 
 jobs:
@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [clash]
+        target: [openclash]
         
     steps:
     - name: Checkout
