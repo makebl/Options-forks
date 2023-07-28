@@ -13,7 +13,7 @@ env:
   TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
   FANQIANG: PASSPULS
-  DIY_SH: master1
+  DIY_SH: master
   TZ: Asia/Shanghai
 
 jobs:
