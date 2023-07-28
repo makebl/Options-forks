@@ -1,3 +1,3 @@
 #!/bin/sh
 
-svn co https://github.com/281677160/openwrt-package/trunk/relevance relevance
+git clone https://github.com/makebl/openwrt-package/luci-app-openclash.git;master
