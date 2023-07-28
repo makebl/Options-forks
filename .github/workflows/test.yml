@@ -53,7 +53,7 @@ jobs:
         $GITHUB_WORKSPACE/${{ env.DIY_SH }}.sh
         $GITHUB_WORKSPACE/token.sh
         [ -f $GITHUB_WORKSPACE/Version_Tags ] && echo "FOLDERPS=1" >> $GITHUB_ENV
-        echo "luci-app-ssr-plus" > README.md
+        echo "OpenClash" > README.md
         
     - name: Upload
       continue-on-error: true
