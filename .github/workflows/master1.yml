@@ -1,4 +1,4 @@
-name: Update test
+name: Update master1
 
 on:
   workflow_dispatch:
