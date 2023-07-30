@@ -5,3 +5,7 @@
 
 
 git clone https://github.com/281677160/luci-app-autoupdate
+mv autoupdate/* .
+rm -rf autoupdate
+
+
