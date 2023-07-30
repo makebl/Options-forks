@@ -4,4 +4,4 @@
 
 
 
-git clone https://github.com/281677160/luci-app-autoupdate luci-app-autoupdate
+svn co https://github.com/281677160/luci-app-autoupdate luci-app-autoupdate
