@@ -4,4 +4,4 @@
 
 
 
-git clone -b main --depth 1 https://github.com/281677160/luci-app-autoupdate luci-app-autoupdate
+git clone https://github.com/281677160/luci-app-autoupdate luci-app-autoupdate
