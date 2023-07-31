@@ -69,7 +69,14 @@ jobs:
         git add .
         git commit -m "同步源码于$(date +%Y年%m月%d号-%H点%M分)" 
         git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/${{ env.GIT_REPOSITORY }}" HEAD:${{ matrix.target }} 
-        
+   
+    - name: Send Telegram notification
+      run: |
+       curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+       -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
+       -d "text=openwrt插件源码更新完成，分支：${{ matrix.target }}"
+      
+      
     - name: Delete workflow runs
       continue-on-error: true
       uses: Mattraks/delete-workflow-runs@main
