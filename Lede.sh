@@ -102,7 +102,6 @@ git clone https://github.com/NateLol/luci-app-oled luci-app-oled
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder luci-app-autoipsetadder
 git clone https://github.com/ximliu/luci-app-smartinfo luci-app-smartinfo
 git clone https://github.com/frainzy1477/luci-app-clash luci-app-clash
-git clone https://github.com/sirpdboy/chatgpt-web.git luci-app-chatgpt
 svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-syncthing luci-app-syncthing     #syncthing同步工具
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-wxedge luci-app-wxedge   #网心云
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-homeassistant luci-app-homeassistant  #智能家居
@@ -118,7 +117,7 @@ svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-a
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-amule luci-app-amule
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse luci-app-aliyundrive-fuse
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos luci-app-eqos
-
+git clone https://github.com/sirpdboy/chatgpt-web luci-app-chatgpt
 # 翻墙依赖
 svn co https://github.com/kenzok8/small-package/trunk/hysteria ./hysteria
 svn co https://github.com/kenzok8/small-package/trunk/haproxy ./haproxy
