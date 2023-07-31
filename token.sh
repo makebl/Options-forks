@@ -119,6 +119,11 @@ for branch in "${BRANCHES[@]}"; do
     sync_status="失败"
   fi
 
+  # 检查是否已发送通知
+  if [[ " ${SENT_BRANCHES[@]} " =~ " $branch " ]]; then
+    continue
+  fi
+  
   message="op插件源码库--分支 '$branch' 同步 $sync_status"
   send_telegram_notification "$message"
 done
