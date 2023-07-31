@@ -354,6 +354,6 @@ v2dat
 v2ray-geodata
 vlmcsd
 webd
-
+EOF
 
 exit 0
