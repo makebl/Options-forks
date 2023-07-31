@@ -1,12 +1,5 @@
 #!/bin/bash
 
-env: 
-  REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
-  SCKEY: ${{ secrets.SCKEY }}
-  PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
-  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-  REPO_BRANCH: ${REPO_BRANCH}
   
 # 删除一些没用的文件
 find . -name '*.git*' -o -name '*.ipk' | xargs -i rm -rf {}
