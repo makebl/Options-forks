@@ -116,7 +116,8 @@ svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-a
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-ubuntu luci-app-ubuntu
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse luci-app-aliyundrive-fuse
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos luci-app-eqos
-svn co https://github.com/sirpdboy/chatgpt-web/trunk luci-app-chatgpt
+git clone https://github.com/sirpdboy/chatgpt-web.git luci-app-chatgpt
+
 # 翻墙依赖
 svn co https://github.com/kenzok8/small-package/trunk/hysteria ./hysteria
 svn co https://github.com/kenzok8/small-package/trunk/haproxy ./haproxy
