@@ -102,7 +102,54 @@ git clone https://github.com/NateLol/luci-app-oled luci-app-oled
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder luci-app-autoipsetadder
 git clone https://github.com/ximliu/luci-app-smartinfo luci-app-smartinfo
 git clone https://github.com/frainzy1477/luci-app-clash luci-app-clash
-git clone git clone https://github.com/sirpdboy/chatgpt-web.git luci-app-chatgpt
+git clone https://github.com/sirpdboy/chatgpt-web.git luci-app-chatgpt
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-syncthing luci-app-syncthing     #syncthing同步工具
+svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-wxedge luci-app-wxedge   #网心云
+svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-homeassistant luci-app-homeassistant  #智能家居
+svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-nastools luci-app-nastools
+svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav luci-app-aliyundrive-webdav
+svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman luci-app-diskman     #磁盘管理
+git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git/trunk luci-app-bandwidthd                #流量监控统计
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-homebox luci-app-homebox     #openwrt内网测速
+svn co https://github.com/pymumu/luci-app-smartdns/branches/lede luci-app-smartdns
+svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi luci-app-guest-wifi
+svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-jackett luci-app-jackett
+svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-ubuntu luci-app-ubuntu
+svn co https://github.com/kenzok8/small-package/trunk/luci-app-amule luci-app-amule
+svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse luci-app-aliyundrive-fuse
+svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos luci-app-eqos
+
+# 翻墙依赖
+svn co https://github.com/kenzok8/small-package/trunk/hysteria ./hysteria
+svn co https://github.com/kenzok8/small-package/trunk/haproxy ./haproxy
+svn co https://github.com/kenzok8/small-package/trunk/xray-plugin ./xray-plugin
+svn co https://github.com/kenzok8/small-package/trunk/xray-core ./xray-core
+svn co https://github.com/kenzok8/small-package/trunk/v2raya ./v2raya
+svn co https://github.com/kenzok8/small-package/trunk/v2ray-plugin ./v2ray-plugin
+svn co https://github.com/kenzok8/small-package/trunk/v2ray-core ./v2ray-core
+svn co https://github.com/kenzok8/small-package/trunk/trojan ./trojan
+svn co https://github.com/kenzok8/small-package/trunk/trojan-go ./trojan-go
+svn co https://github.com/kenzok8/small-package/trunk/tcping ./tcping
+svn co https://github.com/kenzok8/small-package/trunk/ssocks ./ssocks
+svn co https://github.com/kenzok8/small-package/trunk/sing-box ./sing-box
+svn co https://github.com/kenzok8/small-package/trunk/simple-obfs ./simple-obfs
+svn co https://github.com/kenzok8/small-package/trunk/shadowsocks-rust ./shadowsocks-rust
+svn co https://github.com/kenzok8/small-package/trunk/shadowsocksr-libev ./shadowsocksr-libev
+svn co https://github.com/kenzok8/small-package/trunk/redsocks2 ./redsocks2
+svn co https://github.com/kenzok8/small-package/trunk/pdnsd-alt ./pdnsd-alt
+svn co https://github.com/kenzok8/small-package/trunk/naiveproxy ./naiveproxy
+svn co https://github.com/kenzok8/small-package/trunk/microsocks ./microsocks
+svn co https://github.com/kenzok8/small-package/trunk/ipt2socks ./ipt2socks
+svn co https://github.com/kenzok8/small-package/trunk/gn ./gn
+svn co https://github.com/kenzok8/small-package/trunk/dns2tcp ./dns2tcp
+svn co https://github.com/kenzok8/small-package/trunk/dns2socks ./dns2socks
+svn co https://github.com/kenzok8/small-package/trunk/lua-neturl ./lua-neturl
+# 依赖
+svn co https://github.com/kenzok8/jell/trunk/aliyundrive-webdav ./aliyundrive-webdav
+svn co https://github.com/kenzok8/small-package/trunk/aliyundrive-fuse ./aliyundrive-fuse
+svn co https://github.com/pymumu/openwrt-smartdns/trunk ./smartdns
+svn co https://github.com/kiddin9/openwrt-packages/trunk/homebox ./homebox
+svn co https://github.com/Lienol/openwrt-packages/trunk/utils/syncthing ./syncthing
 
 # git clone https://github.com/sirpdboy/luci-app-netdata luci-app-netdata
 
@@ -125,13 +172,7 @@ cp -Rf luci-app-3ginfo-zh_cn/luci-app-3ginfo ./luci-app-3ginfo
 cp -Rf luci-app-3ginfo-zh_cn/3ginfo ./3ginfo
 rm -rf luci-app-3ginfo-zh_cn
 
-# 主题
-#svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/themes/luci-theme-opentomcat luci-theme-opentomcat
-#svn co https://github.com/kenzok8/jell/trunk/luci-themedog luci-themedog
-#svn co https://github.com/sirpdboy/luci-theme-opentopd luci-theme-opentopd
-#svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-theme-opentomato luci-theme-opentomato
-#svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-neobird luci-theme-neobird
-#svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-neobird2 luci-theme-neobird2
+
 ## sundaqiang
 git clone https://github.com/sundaqiang/openwrt-packages sdpackages
 cp -Rf sdpackages/luci-app-supervisord ./luci-app-supervisord
@@ -147,6 +188,10 @@ rm -rf appgost
 # luci-app-vssr
 git clone https://github.com/jerrykuku/luci-app-vssr luci-app-vssr
 git clone https://github.com/jerrykuku/lua-maxminddb lua-maxminddb
+
+# luci-app-bypass
+svn co https://github.com/kenzok8/small/trunk/luci-app-bypass luci-app-bypass
+
 
 ## coolsnowwolf 插件
 git clone https://github.com/coolsnowwolf/luci ddluci
@@ -195,6 +240,16 @@ Wiwiz-PinPinWiFi
 adguardhome
 alist
 alist2
+luci-app-chatgpt
+luci-app-syncthing
+syncthing
+luci-app-wxedge
+luci-app-homeassistant
+luci-app-nastools
+luci-app-aliyundrive-webdav
+luci-app-diskman
+luci-app-bandwidthd
+luci-app-bypass
 app-lucky
 ardhome
 assets
