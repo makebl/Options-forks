@@ -97,30 +97,40 @@ done
 
 
 
-import requests
+send_telegram_notification() {
+  local branch=$1
+  local status=$2
+  local message="Sync status for branch $branch: $status"
+  local url="https://api.telegram.org/bot$TOKEN/sendMessage"
+  local data="chat_id=$CHAT_ID&text=$message"
+  curl -s -X POST "$url" -d "$data" > /dev/null
+}
 
-def send_telegram_notification(success, branch):
-    bot_token = "1622585953:AAGeQmivyLJjVC5iydQkqix45tZbWyY_LGY"
-    chat_id = "1209082658"
-    success_message = f"{branch} 分支同步成功！"
-    failure_message = f"{branch} 分支同步失败！"
-    message = success_message if success else failure_message
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    params = {
-        "chat_id": chat_id,
-        "text": message
-    }
-    response = requests.post(url, params=params)
-    if response.status_code != 200:
-        print(f"Failed to send Telegram notification. Error: {response.text}")
-    else:
-        print("Telegram notification sent successfully.")
+# 同步成功的分支
+successful_branches=("Immortalwrt" "Official" "Xwrt" "Lede" "Lienol" "Theme1" "master" "Theme2")
 
-# 调用示例
-branches = ["Immortalwrt", "Official", "Xwrt", "Lede", "Lienol", "Theme1", "master", "Theme2"]
-success = True  # 假设同步成功
-for branch in branches:
-    send_telegram_notification(success, branch)
+# 同步失败的分支
+failed_branches=()
+
+for branch in "${successful_branches[@]}"
+do
+  # 同步成功的操作
+  # 这里可以添加同步成功的逻辑
+  # ...
+
+  # 发送成功通知
+  send_telegram_notification "$branch" "Sync succeeded"
+done
+
+for branch in "${failed_branches[@]}"
+do
+  # 同步失败的操作
+  # 这里可以添加同步失败的逻辑
+  # ...
+
+  # 发送失败通知
+  send_telegram_notification "$branch" "Sync failed"
+done
 
 
 
