@@ -108,6 +108,10 @@ function send_telegram_notification() {
     -d "text=$message" >/dev/null
 }
 
+# 同步分支函数
+function sync_branch() {
+  branch=$1
+  
 # 遍历分支列表，发送通知
 for branch in "${BRANCHES[@]}"; do
   # 在这里处理每个分支的同步操作
