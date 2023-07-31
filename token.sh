@@ -95,51 +95,16 @@ done
 #if [ -n "$FOLDERS" ]; then  curl http://43.154.188.61:20086//push?token=dahuilang&message=$FOLDERSX--同步失败; fi
 
 
+branches=("Immortalwrt" "Official" "Xwrt" "Lede" "Lienol" "Theme1" "master" "Theme2")
 
-
-# Telegram Bot API 相关信息
-TELEGRAM_BOT_TOKEN="1622585953:AAGeQmivyLJjVC5iydQkqix45tZbWyY_LGY"
-TELEGRAM_CHAT_ID="1209082658"
-
-# 分支列表
-BRANCHES=("Immortalwrt" "Official" "Xwrt" "Lede" "Lienol" "Theme1" "master" "Theme2")
-
-# 发送 Telegram 通知
-function send_telegram_notification() {
-  message=$1
-  curl -s "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
-    -d "chat_id=$TELEGRAM_CHAT_ID" \
-    -d "text=$message" >/dev/null
-}
-
-# 同步分支函数
-function sync_branch() {
-  branch=$1
-
-  # 在这里处理分支的同步操作
-  # ...
-
-  if [ $? -eq 0 ]; then
-    sync_status="成功"
-    message="分支 '$branch' 同步 $sync_status"
-    send_telegram_notification "$message"
+for branch in "${branches[@]}"; do
+  if [ -n "$FOLDERS" ]; then
+    curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🚫插件源码同步失败，分支：Package_${branch}，失败列表：$FOLDERSX......";
   else
-    sync_status="失败"
-    message="分支 '$branch' 同步 $sync_status"
-    send_telegram_notification "$message"
-  fi
-
-  echo "分支 '$branch' 同步 $sync_status"
-}
-
-# 遍历分支列表，发送通知
-for branch in "${BRANCHES[@]}"; do
-  if [ "$branch" == "branch1" ]; then
-    sync_branch "$branch"
-  else
-    echo "分支 '$branch' 跳过同步"
+    curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🎉openwrt插件源码同步成功，分支：Package_${branch}......";
   fi
 done
+
 
 
 
