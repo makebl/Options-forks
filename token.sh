@@ -97,15 +97,6 @@ done
 
 
 
-send_telegram_notification() {
-  local branch=$1
-  local status=$2
-  local message="Sync status for branch $branch: $status"
-  local url="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
-  local data="$TELEGRAM_CHAT_ID=$TELEGRAM_CHAT_ID&text=$message"
-  curl -s -X POST "$url" -d "$data" > /dev/null
-}
-
 TELEGRAM_BOT_TOKEN="1622585953:AAGeQmivyLJjVC5iydQkqix45tZbWyY_LGY"
 TELEGRAM_CHAT_ID="1209082658"
 
