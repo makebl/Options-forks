@@ -97,45 +97,31 @@ done
 
 
 
-# 分支列表
-BRANCHES=("Immortalwrt" "Official" "Xwrt" "Lede" "Lienol" "Theme1" "master" "Theme2")
+import requests
 
-# 发送 Telegram 通知
-function send_telegram_notification() {
-  message=$1
-  curl -s "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
-    -d "chat_id=$TELEGRAM_CHAT_ID" \
-    -d "text=$message" >/dev/null
-}
+def send_telegram_notification(success, branch):
+    bot_token = "1622585953:AAGeQmivyLJjVC5iydQkqix45tZbWyY_LGY"
+    chat_id = "1209082658"
+    success_message = f"{branch} 分支同步成功！"
+    failure_message = f"{branch} 分支同步失败！"
+    message = success_message if success else failure_message
+    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
+    params = {
+        "chat_id": chat_id,
+        "text": message
+    }
+    response = requests.post(url, params=params)
+    if response.status_code != 200:
+        print(f"Failed to send Telegram notification. Error: {response.text}")
+    else:
+        print("Telegram notification sent successfully.")
 
-# 同步分支函数
-function sync_branch() {
-  branch=$1
+# 调用示例
+branches = ["Immortalwrt", "Official", "Xwrt", "Lede", "Lienol", "Theme1", "master", "Theme2"]
+success = True  # 假设同步成功
+for branch in branches:
+    send_telegram_notification(success, branch)
 
-  # 在这里处理分支的同步操作
-  # ...
-
-  if [ $? -eq 0 ]; then
-    sync_status="成功"
-    message="op插件源码库--分支 '$branch' 同步 $sync_status"
-    send_telegram_notification "$message"
-  else
-    sync_status="失败"
-    message="op插件源码库--分支 '$branch' 同步 $sync_status"
-    send_telegram_notification "$message"
-  fi
-
-  echo "op插件源码库--分支 '$branch' 同步 $sync_status"
-}
-
-# 遍历分支列表，发送通知
-for branch in "${BRANCHES[@]}"; do
-  if [ "$branch" == "Immortalwrt" "Official" "Xwrt" "Lede" "Lienol" "Theme1" "master" "Theme2" ]; then
-    sync_branch "$branch"
-  else
-    echo "op插件源码库--分支 '$branch' 跳过同步"
-  fi
-done
 
 
 
