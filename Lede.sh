@@ -241,7 +241,7 @@ adguardhome
 alist
 alist2
 luci-app-eqos
-luci-app-chatgpt
+# luci-app-chatgpt
 luci-app-syncthing
 syncthing
 luci-app-wxedge
