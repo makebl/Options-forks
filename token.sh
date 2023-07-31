@@ -111,25 +111,30 @@ function send_telegram_notification() {
 # 同步分支函数
 function sync_branch() {
   branch=$1
-  
-# 遍历分支列表，发送通知
-for branch in "${BRANCHES[@]}"; do
-  # 在这里处理每个分支的同步操作
+
+  # 在这里处理分支的同步操作
   # ...
 
   if [ $? -eq 0 ]; then
     sync_status="成功"
+    message="op插件源码库--分支 '$branch' 同步 $sync_status"
+    send_telegram_notification "$message"
   else
     sync_status="失败"
+    message="op插件源码库--分支 '$branch' 同步 $sync_status"
+    send_telegram_notification "$message"
   fi
 
-  # 检查是否已发送通知
-  if [[ " ${SENT_BRANCHES[@]} " =~ " $branch " ]]; then
-    continue
+  echo "op插件源码库--分支 '$branch' 同步 $sync_status"
+}
+
+# 遍历分支列表，发送通知
+for branch in "${BRANCHES[@]}"; do
+  if [ "$branch" == "branch1" ]; then
+    sync_branch "$branch"
+  else
+    echo "op插件源码库--分支 '$branch' 跳过同步"
   fi
-  
-  message="op插件源码库--分支 '$branch' 同步 $sync_status"
-  send_telegram_notification "$message"
 done
 
 
