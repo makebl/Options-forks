@@ -72,8 +72,4 @@ exit 0
 # 判断变量值，如果有效发送微信通知
 #if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
 
-if [[ "${{ env.INFORMATION_NOTICE }}" == "TG" ]]; then
-          if [[ "${{steps.compile.outcome}}" == 'success' ]]; then
-            curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=我亲爱的✨主人✨：您使用【${{matrix.target}}】文件夹编译【${REPO_BRANCH}分支的${{env.TARGET_PROFILE}}】固件顺利编译完成了✌️💯💐(${{env.WAREHOUSE_MAN}}仓库的#${{env.RUN_NUMBER}}号)！($(date +%Y年%m月%d号%H时%M分))" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
-          fi
 exit 0
