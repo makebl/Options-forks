@@ -67,12 +67,13 @@ smartdns
 EOF
 exit 0
 #TG通知
-if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -d "chat_id="${{ secrets.TELEGRAM_CHAT_ID }}"&text=🚫插件库同步失败，分支：${REPO_BRANCH}，失败列表：$FOLDERSX......"; else curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -d "chat_id="${{ secrets.TELEGRAM_CHAT_ID }}"&text=🎉插件库同步成功，分支：123${REPO_BRANCH}"; fi
+#if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -d "chat_id="${{ secrets.TELEGRAM_CHAT_ID }}"&text=🚫插件库同步失败，分支：${REPO_BRANCH}，失败列表：$FOLDERSX......"; else curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -d "chat_id="${{ secrets.TELEGRAM_CHAT_ID }}"&text=🎉插件库同步成功，分支：123${REPO_BRANCH}"; fi
 
 # 判断变量值，如果有效发送微信通知
-if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
+#if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
 
-exit 0
-if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
-
+if [[ "${{ env.INFORMATION_NOTICE }}" == "TG" ]]; then
+          if [[ "${{steps.compile.outcome}}" == 'success' ]]; then
+            curl -k --data chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" --data "text=我亲爱的✨主人✨：您使用【${{matrix.target}}】文件夹编译【${REPO_BRANCH}分支的${{env.TARGET_PROFILE}}】固件顺利编译完成了✌️💯💐(${{env.WAREHOUSE_MAN}}仓库的#${{env.RUN_NUMBER}}号)！($(date +%Y年%m月%d号%H时%M分))" "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage"
+          fi
 exit 0
