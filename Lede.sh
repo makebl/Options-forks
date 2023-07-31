@@ -117,7 +117,7 @@ svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-a
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-amule luci-app-amule
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse luci-app-aliyundrive-fuse
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos luci-app-eqos
-git clone https://github.com/sirpdboy/chatgpt-web luci-app-chatgpt
+svn co https://github.com/sirpdboy/chatgpt-web/trunk luci-app-chatgpt
 # 翻墙依赖
 svn co https://github.com/kenzok8/small-package/trunk/hysteria ./hysteria
 svn co https://github.com/kenzok8/small-package/trunk/haproxy ./haproxy
@@ -145,7 +145,7 @@ svn co https://github.com/kenzok8/small-package/trunk/dns2socks ./dns2socks
 svn co https://github.com/kenzok8/small-package/trunk/lua-neturl ./lua-neturl
 
 # 依赖
-svn co https://github.com/kenzok8/jell/trunk/aliyundrive-webdav ./aliyundrive-webdav
+svn co https://github.com/kenzok8/jell/trunk/go-aliyundrive-webdav ./go-aliyundrive-webdav
 svn co https://github.com/kenzok8/small-package/trunk/aliyundrive-fuse ./aliyundrive-fuse
 svn co https://github.com/pymumu/openwrt-smartdns/trunk ./smartdns
 svn co https://github.com/kiddin9/openwrt-packages/trunk/homebox ./homebox
