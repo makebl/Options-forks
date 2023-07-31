@@ -144,6 +144,7 @@ svn co https://github.com/kenzok8/small-package/trunk/gn ./gn
 svn co https://github.com/kenzok8/small-package/trunk/dns2tcp ./dns2tcp
 svn co https://github.com/kenzok8/small-package/trunk/dns2socks ./dns2socks
 svn co https://github.com/kenzok8/small-package/trunk/lua-neturl ./lua-neturl
+
 # 依赖
 svn co https://github.com/kenzok8/jell/trunk/aliyundrive-webdav ./aliyundrive-webdav
 svn co https://github.com/kenzok8/small-package/trunk/aliyundrive-fuse ./aliyundrive-fuse
@@ -240,6 +241,7 @@ Wiwiz-PinPinWiFi
 adguardhome
 alist
 alist2
+luci-app-eqos
 luci-app-chatgpt
 luci-app-syncthing
 syncthing
@@ -252,6 +254,35 @@ luci-app-bandwidthd
 luci-app-bypass
 app-lucky
 ardhome
+hysteria
+haproxy
+xray-plugin
+xray-core
+v2raya
+v2ray-plugin
+v2ray-core
+trojan
+trojan-go
+tcping
+ssocks
+sing-box
+simple-obfs
+shadowsocks-rust
+shadowsocksr-libev
+redsocks2
+pdnsd-alt
+naiveproxy
+microsocks
+ipt2socks
+gn
+dns2tcp
+dns2socks
+lua-neturl
+aliyundrive-webdav
+aliyundrive-fuse
+smartdns
+homebox
+syncthing
 assets
 cdnspeedtest
 clud
