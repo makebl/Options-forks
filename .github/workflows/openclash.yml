@@ -1,4 +1,4 @@
-name: openclash
+name: openclash同步自己插件库
 
 on:
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [master]
+        target: [master2]
        
                 #[master,main,openwrt-21.02,openwrt-18.06,19.07,21.02]
         
