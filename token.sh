@@ -130,7 +130,7 @@ function sync_branch() {
 
 # 遍历分支列表，发送通知
 for branch in "${BRANCHES[@]}"; do
-  if [ "$branch" == "branch1" ]; then
+  if [ "$branch" == "Immortalwrt" "Official" "Xwrt" "Lede" "Lienol" "Theme1" "master" "Theme2" ]; then
     sync_branch "$branch"
   else
     echo "op插件源码库--分支 '$branch' 跳过同步"
