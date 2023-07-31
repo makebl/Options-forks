@@ -27,7 +27,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        target: [Lede]
+        target: [Theme1]
        
         #[Immortalwrt,Lede,Lienol,Official,Xwrt,Theme1,Theme2,adguard]
         
