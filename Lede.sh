@@ -240,17 +240,6 @@ Wiwiz-PinPinWiFi
 adguardhome
 alist
 alist2
-luci-app-eqos
-# luci-app-chatgpt
-luci-app-syncthing
-syncthing
-luci-app-wxedge
-luci-app-homeassistant
-luci-app-nastools
-luci-app-aliyundrive-webdav
-luci-app-diskman
-luci-app-bandwidthd
-luci-app-bypass
 app-lucky
 ardhome
 hysteria
