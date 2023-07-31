@@ -114,11 +114,12 @@ for branch in "${BRANCHES[@]}"; do
   # ...
 
   if [ $? -eq 0 ]; then
-    message="op插件源码库--分支 '$branch' 同步成功"
+    sync_status="成功"
   else
-    message="op插件源码库--分支 '$branch' 同步失败"
+    sync_status="失败"
   fi
 
+  message="op插件源码库--分支 '$branch' 同步 $sync_status"
   send_telegram_notification "$message"
 done
 
