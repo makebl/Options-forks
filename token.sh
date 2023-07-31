@@ -92,15 +92,27 @@ done
 #if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🚫插件源码同步失败，分支：Package_$matrix_target，失败列表：$FOLDERSX......"; else curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🎉openwrt插件源码同步成功，分支：Package_$matrix_target......"; fi
 
 # 判断变量值，如果有效发送微信通知
-#if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
-#TG通知
-if [ -n "$FOLDERS" ]; then  curl "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}&text=🚫插件源码同步失败，分支：${REPO_BRANCH}Package_${{ matrix.target }}，失败列表：$FOLDERSX......"; else curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}&text=🎉openwrt插件源码同步成功，分支：${REPO_BRANCH}Package_${{ matrix.target }}......"; fi
+#if [ -n "$FOLDERS" ]; then  curl http://43.154.188.61:20086//push?token=dahuilang&message=$FOLDERSX--同步失败; fi
 
-# 判断变量值，如果有效发送微信通知
-if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
-exit 0
+# 分支列表
+BRANCHES=("Lede" "Lienol" "Theme1")
+
+# 通过 Telegram Bot API 发送通知
+function send_telegram_notification() {
+  message=$1
+  curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+    -d chat_id="$TELEGRAM_CHAT_ID" \
+    -d text="$message"
+}
+
+# 遍历分支列表，发送通知
+for branch in "${BRANCHES[@]}"; do
+  message="分支 '$branch' 同步成功"
+  send_telegram_notification "$message"
+done
+
 
 # 删除对比更新目录列表
-rm -rf Update.txt
+# rm -rf Update.txt
 
 exit 0
