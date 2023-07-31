@@ -102,9 +102,8 @@ git clone https://github.com/NateLol/luci-app-oled luci-app-oled
 git clone https://github.com/rufengsuixing/luci-app-autoipsetadder luci-app-autoipsetadder
 git clone https://github.com/ximliu/luci-app-smartinfo luci-app-smartinfo
 git clone https://github.com/frainzy1477/luci-app-clash luci-app-clash
+git clone git clone https://github.com/sirpdboy/chatgpt-web.git luci-app-chatgpt
 
-git clone https://github.com/shidahuilang/OpenClash luci-app-xiaolaoshu
-rm -rf luci-app-xiaolaoshu/img
 # git clone https://github.com/sirpdboy/luci-app-netdata luci-app-netdata
 
 #svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
@@ -126,6 +125,13 @@ cp -Rf luci-app-3ginfo-zh_cn/luci-app-3ginfo ./luci-app-3ginfo
 cp -Rf luci-app-3ginfo-zh_cn/3ginfo ./3ginfo
 rm -rf luci-app-3ginfo-zh_cn
 
+# 主题
+#svn co https://github.com/immortalwrt/luci/branches/openwrt-18.06-k5.4/themes/luci-theme-opentomcat luci-theme-opentomcat
+#svn co https://github.com/kenzok8/jell/trunk/luci-themedog luci-themedog
+#svn co https://github.com/sirpdboy/luci-theme-opentopd luci-theme-opentopd
+#svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-theme-opentomato luci-theme-opentomato
+#svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-neobird luci-theme-neobird
+#svn co https://github.com/shidahuilang/luci-theme/trunk/luci-theme-neobird2 luci-theme-neobird2
 ## sundaqiang
 git clone https://github.com/sundaqiang/openwrt-packages sdpackages
 cp -Rf sdpackages/luci-app-supervisord ./luci-app-supervisord
