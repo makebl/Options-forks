@@ -98,12 +98,16 @@ done
 branches=("Immortalwrt" "Official" "Xwrt" "Lede" "Lienol" "Theme1" "master" "Theme2")
 
 for branch in "${branches[@]}"; do
+  # 清除之前的消息
+  curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text="
+
   if [ -n "$FOLDERS" ]; then
     curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🚫插件源码同步失败，分支：Package_${branch}，失败列表：$FOLDERSX......";
   else
     curl "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" -d "chat_id=$TELEGRAM_CHAT_ID&text=🎉openwrt插件源码同步成功，分支：Package_${branch}......";
   fi
 done
+
 
 
 
