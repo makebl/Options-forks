@@ -97,42 +97,48 @@ done
 
 
 
+# Telegram Bot API 相关信息
 TELEGRAM_BOT_TOKEN="1622585953:AAGeQmivyLJjVC5iydQkqix45tZbWyY_LGY"
 TELEGRAM_CHAT_ID="1209082658"
 
-send_telegram_notification() {
-  local branch=$1
-  local status=$2
-  local message="Sync status for branch $branch: $status"
-  local url="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
-  local data="chat_id=$TELEGRAM_CHAT_ID&text=$message"
-  curl -s -X POST "$url" -d "$data" > /dev/null
+# 分支列表
+BRANCHES=("Immortalwrt" "Official" "Xwrt" "Lede" "Lienol" "Theme1" "master" "Theme2")
+
+# 发送 Telegram 通知
+function send_telegram_notification() {
+  message=$1
+  curl -s "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+    -d "chat_id=$TELEGRAM_CHAT_ID" \
+    -d "text=$message" >/dev/null
 }
 
-# 同步成功的分支
-successful_branches=("Immortalwrt" "Official" "Xwrt" "Lede" "Lienol" "Theme1" "master" "Theme2")
+# 同步分支函数
+function sync_branch() {
+  branch=$1
 
-# 同步失败的分支
-failed_branches=()
-
-for branch in "${successful_branches[@]}"
-do
-  # 同步成功的操作
-  # 这里可以添加同步成功的逻辑
+  # 在这里处理分支的同步操作
   # ...
 
-  # 发送成功通知
-  send_telegram_notification "$branch" "Sync succeeded"
-done
+  if [ $? -eq 0 ]; then
+    sync_status="成功"
+    message="分支 '$branch' 同步 $sync_status"
+    send_telegram_notification "$message"
+  else
+    sync_status="失败"
+    message="分支 '$branch' 同步 $sync_status"
+    send_telegram_notification "$message"
+  fi
 
-for branch in "${failed_branches[@]}"
-do
-  # 同步失败的操作
-  # 这里可以添加同步失败的逻辑
-  # ...
+  echo "分支 '$branch' 同步 $sync_status"
+}
 
-  # 发送失败通知
-  send_telegram_notification "$branch" "Sync failed"
+# 遍历分支列表，发送通知
+for branch in "${BRANCHES[@]}"; do
+  if [ "$branch" == "branch1" ]; then
+    sync_branch "$branch"
+  else
+    echo "分支 '$branch' 跳过同步"
+  fi
 done
 
 
