@@ -108,13 +108,12 @@ svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-a
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-nastools luci-app-nastools
 svn co https://github.com/messense/aliyundrive-webdav/trunk/openwrt/luci-app-aliyundrive-webdav luci-app-aliyundrive-webdav
 svn co https://github.com/lisaac/luci-app-diskman/trunk/applications/luci-app-diskman luci-app-diskman     #磁盘管理
-git clone https://github.com/AlexZhuo/luci-app-bandwidthd.git/trunk luci-app-bandwidthd                #流量监控统计
+svn co https://github.com/AlexZhuo/luci-app-bandwidthd/trunk luci-app-bandwidthd                #流量监控统计
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-homebox luci-app-homebox     #openwrt内网测速
 svn co https://github.com/pymumu/luci-app-smartdns/branches/lede luci-app-smartdns
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-guest-wifi luci-app-guest-wifi
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-jackett luci-app-jackett
 svn co https://github.com/linkease/openwrt-app-actions/trunk/applications/luci-app-ubuntu luci-app-ubuntu
-svn co https://github.com/kenzok8/small-package/trunk/luci-app-amule luci-app-amule
 svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse luci-app-aliyundrive-fuse
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos luci-app-eqos
 svn co https://github.com/sirpdboy/chatgpt-web/trunk luci-app-chatgpt
