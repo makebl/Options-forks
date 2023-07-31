@@ -106,6 +106,18 @@ send_telegram_notification() {
   curl -s -X POST "$url" -d "$data" > /dev/null
 }
 
+TELEGRAM_BOT_TOKEN="1622585953:AAGeQmivyLJjVC5iydQkqix45tZbWyY_LGY"
+TELEGRAM_CHAT_ID="1209082658"
+
+send_telegram_notification() {
+  local branch=$1
+  local status=$2
+  local message="Sync status for branch $branch: $status"
+  local url="https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage"
+  local data="chat_id=$TELEGRAM_CHAT_ID&text=$message"
+  curl -s -X POST "$url" -d "$data" > /dev/null
+}
+
 # 同步成功的分支
 successful_branches=("Immortalwrt" "Official" "Xwrt" "Lede" "Lienol" "Theme1" "master" "Theme2")
 
