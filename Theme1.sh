@@ -72,4 +72,3 @@ exit 0
 # 判断变量值，如果有效发送微信通知
 #if [ -n "$FOLDERS" ]; then  curl https://sc.ftqq.com/$SCKEY.send?text=$FOLDERSX--同步失败; fi
 
-exit 0
