@@ -12,7 +12,7 @@ env:
   PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
   TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-  GIT_REPOSITORY: shidahuilang/openwrt-package
+  GIT_REPOSITORY: makebl/openwrt-package
   TZ: Asia/Shanghai
 
 jobs:
