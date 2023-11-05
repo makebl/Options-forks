@@ -58,7 +58,7 @@ git clone https://github.com/destan19/OpenAppFilter && mv -f OpenAppFilter/* ./
 git clone -b master https://github.com/immortalwrt/luci tlluci
 cp -Rf tlluci/applications/luci-app-aliddns ./luci-app-aliddns
 cp -Rf tlluci/applications/luci-app-gowebdav ./luci-app-gowebdav
-cp -Rf tlluci/applications/luci-app-unblockneteasemusic ./luci-app-unblockneteasemusic
+# cp -Rf tlluci/applications/luci-app-unblockneteasemusic ./luci-app-unblockneteasemusic
 cp -Rf tlluci/applications/luci-app-mentohust ./luci-app-mentohust
 cp -Rf tlluci/applications/luci-app-oscam ./luci-app-oscam
 cp -Rf tlluci/applications/luci-app-filebrowser ./luci-app-filebrowser
@@ -118,7 +118,7 @@ svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos luci-app-eqos
 git clone https://github.com/sirpdboy/chatgpt-web.git luci-app-chatgpt
 git clone https://github.com/krystic/luci-app-cifs-mount luci-app-cifs-mount
-# git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic luci-app-unblockneteasemusic
+git clone --branch master https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic luci-app-unblockneteasemusic
 # 翻墙依赖
 svn co https://github.com/kenzok8/small-package/trunk/hysteria ./hysteria
 svn co https://github.com/kenzok8/small-package/trunk/haproxy ./haproxy
