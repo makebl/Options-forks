@@ -118,6 +118,7 @@ svn co https://github.com/kenzok8/small-package/trunk/luci-app-aliyundrive-fuse 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-eqos luci-app-eqos
 git clone https://github.com/sirpdboy/chatgpt-web.git luci-app-chatgpt
 git clone https://github.com/krystic/luci-app-cifs-mount luci-app-cifs-mount
+# git clone https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic luci-app-unblockneteasemusic
 # 翻墙依赖
 svn co https://github.com/kenzok8/small-package/trunk/hysteria ./hysteria
 svn co https://github.com/kenzok8/small-package/trunk/haproxy ./haproxy
@@ -192,7 +193,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb lua-maxminddb
 # luci-app-bypass
 svn co https://github.com/kenzok8/small/trunk/luci-app-bypass luci-app-bypass
 
-
+# svn co -b main https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus luci-app-ssr-plus
 ## coolsnowwolf 插件
 git clone https://github.com/coolsnowwolf/luci ddluci
 cp -Rf ddluci/applications/luci-app-netdata ./luci-app-netdata
