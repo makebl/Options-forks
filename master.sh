@@ -1,7 +1,7 @@
 #!/bin/sh
 
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
-svn export https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash luci-app-openclash
+# svn export https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash luci-app-openclash
 
 # svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
 mkdir -p luci-app-openclash/root/etc/openclash/custom/openclash_custom_rules.list
