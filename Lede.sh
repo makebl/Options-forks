@@ -147,8 +147,8 @@ svn co https://github.com/kenzok8/small-package/trunk/lua-neturl ./lua-neturl
 
 
 svn co https://github.com/xiaorouji/openwrt-passwall2/trunk/luci-app-passwall2 luci-app-passwall2
-git clone -b main https://github.com/fw876/helloworl/luci-app-ssr-plus luci-app-ssr-plus
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-bypass luci-app-bypass
+
+
 
 svn export https://github.com/vernesong/OpenClash/trunk/luci-app-openclash luci-app-openclash
 # svn export https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash luci-app-openclash
@@ -171,7 +171,7 @@ svn co https://github.com/Lienol/openwrt-packages/trunk/utils/syncthing ./syncth
 
 # git clone https://github.com/sirpdboy/luci-app-netdata luci-app-netdata
 
-svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall luci-app-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall luci-app-passwall
 mkdir -p luci-app-passwall/root/usr/share/passwall/rules/direct_host
 curl -fsSL  https://raw.githubusercontent.com/shidahuilang/openwrt-package/usb/argon/direct_host > luci-app-passwall/root/usr/share/passwall/rules/direct_host
 
@@ -205,8 +205,8 @@ git clone https://github.com/jerrykuku/lua-maxminddb lua-maxminddb
 
 # luci-app-bypass
 svn co https://github.com/kenzok8/small/trunk/luci-app-bypass luci-app-bypass
-
-# svn co -b main https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus luci-app-ssr-plus
+svn export https://github.com/fw876/helloworld/branches/main/luci-app-ssr-plus luci-app-ssr-plus
+#svn co -b main https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus luci-app-ssr-plus
 ## coolsnowwolf 插件
 git clone https://github.com/coolsnowwolf/luci ddluci
 cp -Rf ddluci/applications/luci-app-netdata ./luci-app-netdata
