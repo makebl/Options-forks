@@ -44,7 +44,7 @@ jobs:
       env: 
         GITH: ${{ env.DIY_SH }}
       run: |
-        #cd $GITHUB_WORKSPACE
+        cd $GITHUB_WORKSPACE
         chmod +x ${{ env.DIY_SH }}.sh && chmod +x token1.sh
         git clone -b ${{matrix.target}} https://github.com/makebl/delete-workflow-runs.git ${{matrix.target}}
         cd ${{matrix.target}}
@@ -56,7 +56,7 @@ jobs:
     - name: Upload
       continue-on-error: true
       run: |
-        #cd $GITHUB_WORKSPACE
+        cd $GITHUB_WORKSPACE
         chmod -R 775 $GITHUB_WORKSPACE/${{matrix.target}}
         [ -e $GITHUB_WORKSPACE/README/LICENSE ] && cp $GITHUB_WORKSPACE/README/LICENSE $GITHUB_WORKSPACE/${{matrix.target}}
         [ -e $GITHUB_WORKSPACE/README/${{ env.DIY_SH }}/README.md ] && cp $GITHUB_WORKSPACE/README/${{ env.DIY_SH }}/README.md $GITHUB_WORKSPACE/${{matrix.target}}
