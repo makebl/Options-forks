@@ -52,7 +52,6 @@ jobs:
         $GITHUB_WORKSPACE/${{ env.DIY_SH }}.sh
         $GITHUB_WORKSPACE/token1.sh
         [ -f $GITHUB_WORKSPACE/Version_Tags ] && echo "FOLDERPS=1" >> $GITHUB_ENV
-        echo "luci-app-autoupdate" > README.md
         
     - name: Upload
       continue-on-error: true
@@ -60,9 +59,9 @@ jobs:
         cd $GITHUB_WORKSPACE
         chmod -R 775 $GITHUB_WORKSPACE/${{matrix.target}}
         [ -e $GITHUB_WORKSPACE/README/LICENSE ] && cp $GITHUB_WORKSPACE/README/LICENSE $GITHUB_WORKSPACE/${{matrix.target}}
-        [ -e $GITHUB_WORKSPACE/README/${{ env.DIY_SH }}/README.md ] && cp $GITHUB_WORKSPACE/README/${{ env.DIY_SH }}/README.md $GITHUB_WORKSPACE/${{matrix.target}}
+       
         cd $GITHUB_WORKSPACE/${{matrix.target}}
-        if [[ ! "${FOLDERPS}" == "1" ]]; then
+
           git add .
           git commit -m "同步源码于$(TZ='Asia/Shanghai' date +%Y年%m月%d号-%H点%M分)" || true
           git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/makebl/delete-workflow-runs.git" HEAD:${{matrix.target}}
