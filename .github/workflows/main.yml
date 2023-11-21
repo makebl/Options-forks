@@ -1,4 +1,4 @@
-name: openclash
+name: main
 
 on:
   workflow_dispatch:
