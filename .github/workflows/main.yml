@@ -1,4 +1,4 @@
-name: Update autoupdate
+name: makebl/delete-workflow-runs
 
 on:
   workflow_dispatch:
