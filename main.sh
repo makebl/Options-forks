@@ -2,4 +2,4 @@
 ## https://github.com/shidahuilang/OpenWrt
 ## common Module by shidahuilang
 
-git clone https://github.com/JuvenileQ/delete-workflow-runs.git
+svn export https://github.com/JuvenileQ/delete-workflow-runs.git
