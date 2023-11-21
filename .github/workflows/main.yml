@@ -46,7 +46,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         chmod +x ${{ env.DIY_SH }}.sh && chmod +x token1.sh
-        rm -fr ${{matrix.target}} && git clone -b ${{matrix.target}} https://github.com/makebl/delete-workflow-runs.git ${{matrix.target}}
+        rm -fr ${{matrix.target}} && git clone ${{matrix.target}} https://github.com/makebl/delete-workflow-runs.git ${{matrix.target}}
         cd ${{matrix.target}}
         rm -Rf *
         git rm --cache *
