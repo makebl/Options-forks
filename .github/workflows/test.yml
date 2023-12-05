@@ -1,0 +1,17 @@
+name: Clone Other Repository
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  clone-repo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+      with:
+        repository: swaggyP36000/TrollStore-IPAs  # 替换为目标仓库的用户名和仓库名
+        token: ${{ secrets.REPO_TOKEN }}
