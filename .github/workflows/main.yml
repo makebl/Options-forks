@@ -1,10 +1,10 @@
-name: delete-workflow-runs
+name: ipa
 
 on:
   workflow_dispatch:
   
- # schedule:
- #   - cron: 0 23 * * *
+#  schedule:
+#    - cron: 0 21 * * *
 
 env: 
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
@@ -12,6 +12,7 @@ env:
   PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
   TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+  FANQIANG: PASSPULS
   DIY_SH: main
   TZ: Asia/Shanghai
 
@@ -27,8 +28,7 @@ jobs:
         
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
-    
+      uses: actions/checkout@v3 
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -44,13 +44,15 @@ jobs:
         GITH: ${{ env.DIY_SH }}
       run: |
         cd $GITHUB_WORKSPACE
-        chmod +x ${{ env.DIY_SH }}.sh && chmod +x token1.sh
-        git clone -b ${{matrix.target}} https://github.com/makebl/TrollStore-IPAs.git ${{matrix.target}}
+        chmod +x ${{ env.DIY_SH }}.sh && chmod +x token.sh
+        rm -fr ${{matrix.target}} && git clone -b ${{matrix.target}} https://github.com/makebl/TrollStore-IPAs.git ${{matrix.target}}
         cd ${{matrix.target}}
-
+        rm -Rf *
+        git rm --cache *
         $GITHUB_WORKSPACE/${{ env.DIY_SH }}.sh
-        $GITHUB_WORKSPACE/token1.sh
+        $GITHUB_WORKSPACE/token.sh
         [ -f $GITHUB_WORKSPACE/Version_Tags ] && echo "FOLDERPS=1" >> $GITHUB_ENV
+        echo "luci-app-passwall" > README.md
         
     - name: Upload
       continue-on-error: true
@@ -60,10 +62,11 @@ jobs:
         [ -e $GITHUB_WORKSPACE/README/LICENSE ] && cp $GITHUB_WORKSPACE/README/LICENSE $GITHUB_WORKSPACE/${{matrix.target}}
         [ -e $GITHUB_WORKSPACE/README/${{ env.DIY_SH }}/README.md ] && cp $GITHUB_WORKSPACE/README/${{ env.DIY_SH }}/README.md $GITHUB_WORKSPACE/${{matrix.target}}
         cd $GITHUB_WORKSPACE/${{matrix.target}}
-
+        if [[ ! "${FOLDERPS}" == "1" ]]; then
           git add .
-          git commit -m "同步源码于$(TZ='Asia/Shanghai' date +%Y年%m月%d号-%H点%M分)" || true
-          git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/makebl/TrollStore-IPAs.git" HEAD:main
+          git commit -m "passwall同步源码于$(TZ='Asia/Shanghai' date +%Y年%m月%d号-%H点%M分)" || true
+          git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/makebl/TrollStore-IPAs.git" HEAD:${{matrix.target}}
+        else
           echo "缺少文件，放弃同步..."
         fi
         
