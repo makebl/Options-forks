@@ -2,6 +2,7 @@ name: Clone Repository
 
 on:
   workflow_run:
+    workflows: ["Main Workflow"]
     types:
       - completed
 
@@ -10,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-      with:
-        repository: swaggyP36000/TrollStore-IPAs
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          repository: swaggyP36000/TrollStore-IPAs
