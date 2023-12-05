@@ -45,7 +45,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         chmod +x ${{ env.DIY_SH }}.sh && chmod +x token.sh
-        rm -fr ${{matrix.target}} && git clone -b ${{matrix.target}} https://github.com/makebl/TrollStore-IPAs.git ${{matrix.target}}
+        rm -fr ${{matrix.target}} && git clone -b ${{matrix.target}} https://github.com/swaggyP36000/TrollStore-IPAs.git ${{matrix.target}}
         cd ${{matrix.target}}
         rm -Rf *
         git rm --cache *
