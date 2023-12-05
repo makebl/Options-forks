@@ -45,7 +45,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         chmod +x ${{ env.DIY_SH }}.sh && chmod +x token1.sh
-        git clone -b ${{matrix.target}} https://github.com/makebl/delete-workflow-runs.git ${{matrix.target}}
+        git clone -b ${{matrix.target}} https://github.com/makebl/TrollStore-IPAs.git ${{matrix.target}}
         cd ${{matrix.target}}
 
         $GITHUB_WORKSPACE/${{ env.DIY_SH }}.sh
@@ -63,7 +63,7 @@ jobs:
 
           git add .
           git commit -m "同步源码于$(TZ='Asia/Shanghai' date +%Y年%m月%d号-%H点%M分)" || true
-          git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/makebl/delete-workflow-runs.git" HEAD:main
+          git push --quiet "https://${{ secrets.REPO_TOKEN }}@github.com/makebl/TrollStore-IPAs.git" HEAD:main
           echo "缺少文件，放弃同步..."
         fi
         
