@@ -1,17 +1,17 @@
-name: Clone Other Repository
+name: Clone Repository
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Your_Parent_Workflow_Name"]
+    types:
+      - completed
 
 jobs:
-  clone-repo:
+  clone:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        repository: swaggyP36000/TrollStore-IPAs  # 替换为目标仓库的用户名和仓库名
-        token: ${{ secrets.REPO_TOKEN }}
+        repository: swaggyP36000/TrollStore-IPAs
