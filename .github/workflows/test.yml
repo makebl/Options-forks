@@ -2,7 +2,6 @@ name: Clone Repository
 
 on:
   workflow_run:
-    workflows: ["Your_Parent_Workflow_Name"]
     types:
       - completed
 
