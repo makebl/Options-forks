@@ -1,8 +1,9 @@
 #!/bin/bash
 
 git clone https://github.com/fw876/helloworld.git
-mv -f helloworld/* ./
-rm -rf helloworld
+#svn co -b main https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus
+#mv -f helloworld/* ./
+#rm -rf helloworld
 
 
 # 生成完整目录清单
